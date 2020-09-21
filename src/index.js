@@ -7,7 +7,7 @@ import thunk from 'redux-thunk';
 import playersReducer from './reducers/playersReducer.js';
 //import rootReducer from './reducers';
  
- //store setuo
+ //store setup
 const store = createStore(playersReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
