@@ -1,7 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPlayers } from './actions/playerActions'
- 
+import { fetchPlayers } from './actions/fetchPlayersActions'
+import PlayerInput from './components/PlayerInput';
+import Players from './components/Players';
 
 
 
@@ -17,6 +18,8 @@ class App extends React.Component {
     return (
       <div className="App">
         <h1>App</h1>
+        < PlayerInput />
+        < Players players = {this.props.players}/>
       </div>
     );
   }

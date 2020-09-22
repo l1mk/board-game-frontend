@@ -14,6 +14,12 @@ const playersReducer = (state = { players: [], loading: false }, action) => {
           players: action.players,
           loading: false
         }
+      case 'ADD_PLAYER':
+        console.log('adding new player', action, state)
+        return {
+          ...state,
+          players : [...state.players, action.payload]
+        }
       default:
         return state;
     }
