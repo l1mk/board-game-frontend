@@ -1,20 +1,30 @@
 import React from 'react'
 
+const Player = (props) => {
 
-const Player = (props) => ( 
-    <div>
-    {console.log('Player component', props.player)}
-    <h1>Player: </h1>
-    {props.player.name}
-    <h3>Bio: </h3>
-    {props.player.bio}
-    <h3>Favorite: </h3>
-    {props.player.favorite}
-    <h3>Wins: </h3>
-    {props.player.wins}
-    <h4>Loses: </h4>
-    {props.player.loses}
-    </div>
-)
+    console.log('Player component', props.player)
+    let player = props.players.find(function (element) { 
+        console.log(element.id, props.match.params.id); 
+        return `${element.id}` === props.match.params.id;  });
+
+         if (player) {
+            return (
+                <div>
+                    <li>
+                        Name: {player.name} - Wins: {player.wins} - Loses: {player.loses}
+
+                    </li>
+                </div>
+            )
+
+         } else {
+             return (
+                 <div></div>
+             )
+         }
+
+} 
+
+
 
 export default Player

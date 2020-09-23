@@ -4,7 +4,7 @@ import { fetchPlayers } from '../actions/fetchPlayersActions';
 import { Route } from 'react-router-dom'
 import PlayerInput from '../components/PlayerInput';
 import Players from '../components/Players';
-
+import Player from '../components/Player'
 
 
 class PlayerContainer extends React.Component {
@@ -20,6 +20,7 @@ class PlayerContainer extends React.Component {
       <div className="App">
         <h1>Player Container</h1>
         < Route path='/players/new' component={PlayerInput} />
+        < Route path='/players/:id' render={(routerProps)=> < Player {...routerProps} players = {this.props.players}/>}  />
         < Route exact path='/players' render={()=> < Players players = {this.props.players}/>}  />
       </div>
     );
