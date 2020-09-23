@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { fetchPlayers } from '../actions/fetchPlayersActions';
-import { Route } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
 import PlayerInput from '../components/PlayerInput';
 import Players from '../components/Players';
 import Player from '../components/Player'
@@ -19,9 +19,11 @@ class PlayerContainer extends React.Component {
     return (
       <div className="App">
         <h1>Player Container</h1>
+        <Switch>
         < Route path='/players/new' component={PlayerInput} />
         < Route path='/players/:id' render={(routerProps)=> < Player {...routerProps} players = {this.props.players}/>}  />
         < Route exact path='/players' render={()=> < Players players = {this.props.players}/>}  />
+        </Switch>
       </div>
     );
   }

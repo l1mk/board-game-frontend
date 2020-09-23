@@ -1,4 +1,5 @@
 import React from 'react'
+import ScoreContainer from '../containers/ScoreContainer';
 
 const Player = (props) => {
 
@@ -12,8 +13,8 @@ const Player = (props) => {
                 <div>
                     <li>
                         Name: {player.name} - Wins: {player.wins} - Loses: {player.loses}
-
                     </li>
+                    <ScoreContainer />
                 </div>
             )
 
