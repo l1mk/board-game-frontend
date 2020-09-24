@@ -10,8 +10,12 @@ export const addPlayer = (data) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(player => dispatch({type: 'ADD_PLAYER', payload: player }))
-
-
+        .then(player => {
+            if (player.error){
+                alert(player.error)
+            } else {
+                dispatch({type: 'ADD_PLAYER', payload: player })
+            }
+        })
     }
 }

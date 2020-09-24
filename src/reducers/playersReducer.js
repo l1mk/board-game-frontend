@@ -20,6 +20,12 @@ const playersReducer = (state = { players: [], loading: false }, action) => {
           ...state,
           players : [...state.players, action.payload]
         }
+        case 'DELETE_PLAYER':
+          console.log('deleting player', action, state)
+          return {
+            ...state,
+            players : action.players
+          }
       default:
         return state;
     }

@@ -1,5 +1,7 @@
 import React from 'react'
-import ScoreContainer from '../containers/ScoreContainer';
+import { connect } from 'react-redux';
+import ScoreContainer from '../containers/ScoreContainer'
+import { deletePlayer } from '../actions/deletePlayer'
 
 const Player = (props) => {
 
@@ -8,11 +10,15 @@ const Player = (props) => {
         console.log(element.id, props.match.params.id); 
         return `${element.id}` === props.match.params.id;  });
 
+        const onDelete = () => {
+            props.deletePlayer(player.id)
+        }
+
          if (player) {
             return (
                 <div>
                     <li>
-                        Name: {player.name} - Wins: {player.wins} - Loses: {player.loses}
+                        Name: {player.name} - Wins: {player.wins} - Loses: {player.loses} <button onClick= {onDelete} >Delete</button>
                     </li>
                     <ScoreContainer />
                 </div>
@@ -27,5 +33,4 @@ const Player = (props) => {
 } 
 
 
-
-export default Player
+export default connect(null, {deletePlayer}) (Player)
