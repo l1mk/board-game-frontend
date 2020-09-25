@@ -1,14 +1,14 @@
 const playersReducer = (state = { players: [], loading: false }, action) => {
     switch(action.type) {
       case 'LOADING_PLAYERS':
-        console.log('loading', action, state)
+        console.log('loading player', action, state)
         return {
           ...state,
           players: [...state.players],
           loading: true
         }
       case 'ADD_PLAYERS':
-        console.log('adding', action, state)
+        console.log('all players', action, state)
         return {
           ...state,
           players: action.players,
@@ -18,7 +18,7 @@ const playersReducer = (state = { players: [], loading: false }, action) => {
         console.log('adding new player', action, state)
         return {
           ...state,
-          players : [...state.players, action.payload]
+          players : [...state.players, action.player]
         }
         case 'DELETE_PLAYER':
           console.log('deleting player', action, state)
@@ -29,8 +29,8 @@ const playersReducer = (state = { players: [], loading: false }, action) => {
         case 'UPDATE_PLAYER':
           console.log('updating player', action, state)
           let updatedPlayer = state.players.map(player => {
-            if (player.id === action.payload.id) {
-              return action.payload
+            if (player.id === action.player.id) {
+              return action.player
             } else {
               return player
             }

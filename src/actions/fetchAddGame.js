@@ -1,6 +1,6 @@
-export const fetchAddPlayer = (data) => {
+export const fetchAddGame = (data) => {
     return (dispatch) => {
-        fetch ('http://localhost:3000/players', {
+        fetch ('http://localhost:3000/games', {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
@@ -9,11 +9,11 @@ export const fetchAddPlayer = (data) => {
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(player => {
-            if (player.error){
-                alert(player.error)
+        .then(game => {
+            if (game.error){
+                alert(game.error)
             } else {
-                dispatch({type: 'ADD_PLAYER', player: player })
+                dispatch({type: 'ADD_GAME', game: game })
             }
         })
     }

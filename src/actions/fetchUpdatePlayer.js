@@ -9,6 +9,6 @@ export const fetchUpdatePlayers = (data) =>{
             body: JSON.stringify(data)
         })
         .then(response => response.json())
-        .then(player => dispatch({type: 'UPDATE_PLAYER', payload: player}))
+        .then(player => dispatch({type: 'UPDATE_PLAYER', player: player}))
     }
 }
