@@ -26,6 +26,18 @@ const playersReducer = (state = { players: [], loading: false }, action) => {
             ...state,
             players : action.players
           }
+        case 'UPDATE_PLAYER':
+          console.log('updating player', action, state)
+          let updatedPlayer = state.players.map(player => {
+            if (player.id === action.payload.id) {
+              return action.payload
+            } else {
+              return player
+            }
+          })
+          return {
+            ...state,
+             players: [...state.players, updatedPlayer]}
       default:
         return state;
     }

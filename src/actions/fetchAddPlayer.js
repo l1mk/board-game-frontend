@@ -1,5 +1,4 @@
-export const addPlayer = (data) => {
-
+export const fetchAddPlayer = (data) => {
     return (dispatch) => {
         fetch ('http://localhost:3000/players', {
             headers: {

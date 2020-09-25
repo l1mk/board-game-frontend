@@ -1,4 +1,4 @@
-export const fetchPlayers = () => {
+export const fetchAllPlayers = () => {
   return (dispatch) => {
     dispatch({ type: 'LOADING_PLAYERS'})
     fetch('http://localhost:3000/players')

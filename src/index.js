@@ -4,12 +4,11 @@ import App from './App';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
-import playersReducer from './reducers/playersReducer.js';
 import { BrowserRouter as Router} from 'react-router-dom'
-//import rootReducer from './reducers';
+import rootReducer from './reducers/rootReducer';
  
  //store setup
-const store = createStore(playersReducer, applyMiddleware(thunk))
+const store = createStore(rootReducer, applyMiddleware(thunk))
 
 ReactDOM.render(
     <Provider store={store}>
