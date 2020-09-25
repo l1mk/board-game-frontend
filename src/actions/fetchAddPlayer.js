@@ -1,4 +1,5 @@
 export const fetchAddPlayer = (data) => {
+    //action to add a player
     return (dispatch) => {
         fetch ('http://localhost:3000/players', {
             headers: {

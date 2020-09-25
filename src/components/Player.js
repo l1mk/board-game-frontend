@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import ScoreContainer from '../containers/ScoreContainer'
-import { deletePlayer } from '../actions/deletePlayer'
+import { deletePlayer } from '../actions/fetchDeletePlayer'
 
 const Player = (props) => {
 

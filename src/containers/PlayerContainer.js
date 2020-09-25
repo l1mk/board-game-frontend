@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchPlayers } from '../actions/fetchPlayersActions';
+import { fetchPlayers } from '../actions/fetchAllPlayers';
 import { Route, Switch } from 'react-router-dom'
 import PlayerInput from '../components/PlayerInput';
 import Players from '../components/Players';

@@ -1,4 +1,5 @@
 export const fetchAddGame = (data) => {
+    //action to add a game
     return (dispatch) => {
         fetch ('http://localhost:3000/games', {
             headers: {

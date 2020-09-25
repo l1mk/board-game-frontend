@@ -9,7 +9,7 @@ import rootReducer from './reducers/rootReducer';
  
  //store setup
 const store = createStore(rootReducer, applyMiddleware(thunk))
-
+//redering the and passing router and store
 ReactDOM.render(
     <Provider store={store}>
       <Router>

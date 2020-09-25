@@ -1,4 +1,5 @@
 export const fetchUpdatePlayers = (data) =>{
+    //action to update player wins
     return (dispatch) => {
         fetch(`http://localhost:3000/players/${data.id}`, {
             headers: {

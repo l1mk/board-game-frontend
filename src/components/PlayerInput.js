@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { addPlayer } from '../actions/addPlayer'
+import { addPlayer } from '../actions/fetchAddPlayer'
 
 class PlayerInput extends React.Component {
 

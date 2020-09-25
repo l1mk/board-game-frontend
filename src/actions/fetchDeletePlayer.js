@@ -1,5 +1,5 @@
-export const deletePlayer = (id) => {
-
+export const fetchDeletePlayer = (id) => {
+  //action to delete a player
     return (dispatch) => {
         fetch (`http://localhost:3000/players/${id}`, {
             method:'DELETE'
