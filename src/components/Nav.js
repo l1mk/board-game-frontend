@@ -12,7 +12,6 @@ class Nav extends React.Component {
       <NavLink to="/pokedex"> Pokedex </NavLink>
       <NavLink to="/records"> Records </NavLink>
       <NavLink to="/about"> About </NavLink>
-      <NavLink to="/players"> Players </NavLink>
         
 
       </div>

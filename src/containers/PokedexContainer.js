@@ -26,10 +26,10 @@ class PokedexContainer extends React.Component {
 }
 
 //maps this.props. to state in the store
-const mapStateToProps = (state) => {
+const mapStateToProps = (store) => {
   return {
-    characters: state.characters,
-    loading: state.loading
+    characters: store.charactersReducer.characters,
+    loading: store.charactersReducer.loading
   }
 }
 

@@ -5,8 +5,8 @@ import charactersReducer from './charactersReducer'
 
 //combination of all existing reducers
 const rootReducer =  combineReducers({
-    gamesReducer,
     playersReducer,
+    gamesReducer,
     charactersReducer
 })
 

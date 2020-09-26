@@ -27,12 +27,12 @@ class RecordsContainer extends React.Component {
   }
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (store) => {
   return {
-    players: state.players,
-    loadingPlayer: state.loadingPlayer,
-    games: state.games,
-    loadingGame: state.loadingGame,
+    players: store.playersReducer.players,
+    loadingPlayer: store.playersReducer.loadingPlayer,
+    games: store.gamesReducer.games,
+    loadingGame: store.gamesReducer.loadingGame,
   }
 }
  

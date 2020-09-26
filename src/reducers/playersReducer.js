@@ -1,4 +1,4 @@
-const playersReducer = (state = { players: [], loadingPlayer: false , games: [], loadingGame: false}, action) => {
+const playersReducer = (state = { players: [], loadingPlayer: false}, action) => {
     switch(action.type) {
       case 'LOADING_PLAYERS':
         console.log('loading player', action, state)
@@ -38,32 +38,7 @@ const playersReducer = (state = { players: [], loadingPlayer: false , games: [],
           return {
             ...state,
              players: [...state.players, updatedPlayer]}
-             case 'LOADING_GAMES':
-              console.log('loading games', action, state)
-              return {
-                ...state,
-                games: [...state.games],
-                loadingGame: true
-              }
-            case 'ADD_GAMES':
-              console.log('all games', action, state)
-              return {
-                ...state,
-                games: action.games,
-                loadingGame: false
-              }
-            case 'ADD_GAME':
-              console.log('adding new game', action, state)
-              return {
-                ...state,
-                games : [...state.games, action.game]
-              }
-              case 'DELETE_GAME':
-                console.log('deleting game', action, state)
-                return {
-                  ...state,
-                  games : action.games
-                }
+
 
       default:
         return state;
