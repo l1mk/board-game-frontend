@@ -2,6 +2,7 @@ import React from 'react';
 
 //about component info inside the about page
 class About extends React.Component {
+  
   render(){
     console.log('about render console')
     return (

@@ -4,8 +4,8 @@ import { fetchAllPlayers } from '../actions/fetchAllPlayers';
 import { fetchAllGames } from '../actions/fetchAllGames';
 import { fetchDeletePlayer } from '../actions/fetchDeletePlayer';
 import { fetchDeleteGame } from '../actions/fetchDeleteGame';
-import PlayerContainer from './PlayerContainer';
-import GameContainer from './GameContainer';
+import PlayersContainer from './PlayersContainer';
+import GamesContainer from './GamesContainer';
 
 
 class RecordsContainer extends React.Component {
@@ -20,8 +20,8 @@ class RecordsContainer extends React.Component {
     console.log('records container render console', this.props)
     return (
       <div>
-        <PlayerContainer players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} />
-        <GameContainer games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} />
+        <PlayersContainer players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} />
+        <GamesContainer games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} />
       </div>
     );
   }

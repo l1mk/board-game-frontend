@@ -4,6 +4,7 @@ import { NavLink } from 'react-router-dom';
 
 //nav component to render all links in the menu
 class Nav extends React.Component {
+  
   render(){
     console.log('navbar render console')
     return (

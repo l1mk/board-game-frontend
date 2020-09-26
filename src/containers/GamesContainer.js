@@ -2,7 +2,7 @@ import React from 'react';
 import Games from '../components/Games';
 
 
-class GameContainer extends React.Component {
+class GamesContainer extends React.Component {
 
   render(){
     console.log('game container render console', this.props)
@@ -17,4 +17,4 @@ class GameContainer extends React.Component {
 
  
 
-export default (GameContainer)
+export default (GamesContainer)

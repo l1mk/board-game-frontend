@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom'
 import NavContainer from './containers/NavContainer';
-import GameContainer from './containers/GameContainer';
 import PokedexContainer from './containers/PokedexContainer';
 import RecordsContainer from './containers/RecordsContainer';
 import AboutContainer from './containers/AboutContainer';

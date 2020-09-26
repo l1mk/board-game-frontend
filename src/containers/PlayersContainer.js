@@ -3,7 +3,7 @@ import Players from '../components/Players';
 
 
 
-class PlayerContainer extends React.Component {
+class PlayersContainer extends React.Component {
 
 
   render(){
@@ -18,4 +18,4 @@ class PlayerContainer extends React.Component {
 }
 
 
-export default (PlayerContainer)
+export default (PlayersContainer)
