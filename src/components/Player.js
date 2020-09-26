@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux';
 import ScoreContainer from '../containers/ScoreContainer'
-import { deletePlayer } from '../actions/fetchDeletePlayer'
+import { fetchDeletePlayer } from '../actions/fetchDeletePlayer'
 
 const Player = (props) => {
 
@@ -11,7 +11,7 @@ const Player = (props) => {
         return `${element.id}` === props.match.params.id;  });
 
         const onDelete = () => {
-            props.deletePlayer(player.id)
+            props.fetchDeletePlayer(player.id)
         }
 
          if (player) {

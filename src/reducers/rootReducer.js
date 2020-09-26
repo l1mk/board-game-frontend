@@ -4,8 +4,10 @@ import playersReducer from './playersReducer'
 import charactersReducer from './charactersReducer'
 
 //combination of all existing reducers
-export default combineReducers({
+const rootReducer =  combineReducers({
     gamesReducer,
     playersReducer,
     charactersReducer
 })
+
+export default rootReducer; 

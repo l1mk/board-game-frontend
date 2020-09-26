@@ -1,6 +1,6 @@
 import React from 'react'
 import { connect } from 'react-redux';
-import { addPlayer } from '../actions/fetchAddPlayer'
+import { fetchAddPlayer } from '../actions/fetchAddPlayer'
 
 class PlayerInput extends React.Component {
 
@@ -17,7 +17,7 @@ class PlayerInput extends React.Component {
     submitHandler = (e) => {
         console.log('submit new player')
         e.preventDefault()
-        this.props.addPlayer(this.state)
+        this.props.fetchAddPlayer(this.state)
         this.setState({ 
             name: "",
             bio: "",
@@ -41,4 +41,4 @@ class PlayerInput extends React.Component {
 }
 
 
-export default connect(null, {addPlayer}) (PlayerInput)
+export default connect(null, {fetchAddPlayer}) (PlayerInput)

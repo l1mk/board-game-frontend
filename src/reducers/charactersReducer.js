@@ -8,7 +8,7 @@ const charactersReducer = (state = { characters: [], loading: false }, action) =
           loading: true
         }
       case 'ADD_CHARACTERS':
-        console.log('all characters', action, state)
+        console.log('all characters', action.characters, state)
         return {
           ...state,
           characters: action.characters,
