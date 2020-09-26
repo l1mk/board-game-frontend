@@ -4,11 +4,11 @@ import { NavLink } from 'react-router-dom';
 
 //nav component to render all links in the menu
 class Nav extends React.Component {
-  
+
   render(){
     console.log('navbar render console')
     return (
-      <div className="nav">
+      <div>
           <h5>Nav Bar:</h5>
       <NavLink to="/pokedex"> Pokedex </NavLink>
       <NavLink to="/records"> Records </NavLink>
