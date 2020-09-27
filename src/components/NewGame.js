@@ -1,5 +1,6 @@
 import React from 'react';
-import PlayerInput from './PlayerInput';
+import { connect } from 'react-redux';
+import { NavLink } from 'react-router-dom';
 
 //newGame component
 class NewGame extends React.Component {
@@ -7,8 +8,8 @@ class NewGame extends React.Component {
     state = {
         player1: "AI1",
         player2: "AI2",
-        player3: "AI3",
-        player4: "AI4"
+        player3: "AI3" ,
+        player4: "AI4",
     }
 
     changeHandler = (e) => {
@@ -17,6 +18,14 @@ class NewGame extends React.Component {
 
     submitHandler = (e) => {
         console.log('submit new player')
+        e.preventDefault()
+        this.props.selectPlayers(this.state)
+        this.setState({ 
+            player1: "AI1",
+            player2: "AI2",
+            player3: "AI3" ,
+            player4: "AI4",
+        })
     }
 
   render(){
@@ -45,13 +54,24 @@ class NewGame extends React.Component {
                  <option value = "AI4">CPU</option>
                  <option value = "player4">Player</option>
              </select><br></br>
-             <input type = "submit" value = "Continue"></input>
+             <input type = "submit" value = "Submit"></input>
           </form>
+          <NavLink to="/selection"> Continue to... </NavLink>
+        <div>
+        </div>
+        
       </div>
+
+
     );
   }
 }
 
+const mapDispatchToProps = dispatch => {
+    return {
+      selectPlayers: (players) => { dispatch({type: 'SELECTED_PLAYERS', selectedPlayers: players})}
+    }
+  }
  
 
-export default (NewGame)
+export default connect(null, mapDispatchToProps) (NewGame)

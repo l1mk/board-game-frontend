@@ -7,9 +7,12 @@ const Games = (props) => {
 
     return (
     <div>
+        <h5>Games Played:</h5>
         {props.games.map( game =>  
         <li key= {game.id} > 
-        Session: {game.id} - PLAYER1 : {game.player1} /PIKACHU - PLAYER2 : {game.player2} /EEVEE - PLAYER3 : {game.player3}/JIGGLYPUFF - PLAYER4 : {game.player4}/TOGEPI <button onClick= {() => props.fetchDeleteGame} >Delete</button>
+        <span>SESSION: {game.id} </span><br></br>
+        <span>PLAYER1 : {game.player1} /PIKACHU - PLAYER2 : {game.player2} /EEVEE - PLAYER3 : {game.player3}/JIGGLYPUFF - PLAYER4 : {game.player4}/TOGEPI </span>
+        <button onClick= {() => props.fetchDeleteGame} >Delete</button>
         </li>   )}
     </div>
     )}

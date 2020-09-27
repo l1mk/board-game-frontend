@@ -7,6 +7,7 @@ const Players = (props) => {
 
     return (
     <div>
+    <h5>Player Records </h5>
     {props.players.map( player =>  
         <li key= {player.id} > 
            Name: {player.name} - Wins: {player.wins} - Loses: {player.loses} <button onClick= {() => props.fetchDeletePlayer} >Delete</button>

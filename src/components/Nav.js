@@ -9,7 +9,8 @@ class Nav extends React.Component {
     console.log('navbar render console')
     return (
       <div>
-          <h5>Nav Bar:</h5>
+          <h5>Nav Bar </h5>
+      <NavLink to="/"> Home </NavLink> 
       <NavLink to="/pokedex"> Pokedex </NavLink>
       <NavLink to="/records"> Records </NavLink>
       <NavLink to="/about"> About </NavLink>

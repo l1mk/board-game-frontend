@@ -5,6 +5,7 @@ import PokedexContainer from './containers/PokedexContainer';
 import RecordsContainer from './containers/RecordsContainer';
 import AboutContainer from './containers/AboutContainer';
 import NewGameContainer from './containers/NewGameContainer';
+import SelectionContainer from './containers/SelectionContainer';
 
 class App extends React.Component {
 
@@ -22,6 +23,7 @@ class App extends React.Component {
         < Route path='/records' component={RecordsContainer} />
         < Route path='/about' component={AboutContainer} />
         < Route path='/newgame' component={NewGameContainer} />
+        < Route path='/selection' component={SelectionContainer} />
         </Switch>
       </div>
     );
