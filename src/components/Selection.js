@@ -5,8 +5,8 @@ import { fetchAddPlayer } from '../actions/fetchAddPlayer'
 //List of Player that are going to play and form for new players
 class Selection extends React.Component {
 
-    state = {
-    }
+    state = { }
+    
     playerExist = (newPlayers) => {
         if (this.props.selectedPlayers.player1 === "player1"){
             console.log(this.props.selectedPlayers.player1 === "player1")
@@ -28,25 +28,48 @@ class Selection extends React.Component {
         return newPlayers
     }
     
-    changeHandler = (e) => {
-        this.setState({ name: e.target.value })
+    changeHandler = (e, player) => {
+        if (player === "player1") {
+            this.setState({ player1: {name: e.target.value} })
+        } 
+        if (player === "player2") {
+            this.setState({ player2: {name: e.target.value} })
+        } 
+        if (player === "player3") {
+            this.setState({  player3: {name: e.target.value} })
+        } 
+        if (player === "player4") {
+            this.setState({ player4: {name: e.target.value} })
+        } 
     }
 
-    submitHandler = (e, player) => {
-        console.log('submit new player', e, this.state)
+    submitHandler = (e, player, newPlayers) => {
+        console.log('submit new player', player, this.state)
         e.preventDefault()
-        this.props.fetchAddPlayer(this.state)
+        if (player === "player1") {
+            this.props.fetchAddPlayer(this.state.player1)
+            this.setState({ })
+        } 
+        if (player === "player2") {
+            this.props.fetchAddPlayer(this.state.player2)
+        } 
+        if (player === "player3") {
+            this.props.fetchAddPlayer(this.state.player3)
+        } 
+        if (player === "player4") {
+            this.props.fetchAddPlayer(this.state.player4)
+        } 
         this.setState({ 
-            player1: "",
-            player2: "",
-            player3: "",
-            player4: "",  
         })
     }
 
-    Capitalize = (str) => {
+    capitalize = (str) => {
         return str.charAt(0).toUpperCase() + str.slice(1);
         }
+
+    click = (newPlayers) => {
+        console.log('click', newPlayers)
+    }
 
     render(){
         console.log('selection component', this.props)
@@ -63,11 +86,12 @@ class Selection extends React.Component {
                 <div>
                 {newPlayers.map( (player, index) =>  
                     <div key = {index}>
-                        <form onSubmit={e => this.submitHandler(e, player)}>
-                            <label>{this.Capitalize(player)} Name: </label><br></br>
-                            <input type="text" placeholder="Name" name={player} value={this.state.name} onChange={this.changeHandler} />
-                            <input type="submit" value="Submit" />
+                        <form onSubmit={(e)=> this.submitHandler(e, player, newPlayers)}>
+                            <label>{this.capitalize(player)} Name: </label><br></br>
+                            <input type="text" placeholder="Name" name={player} value={this.state.player} onChange={(e)=> this.changeHandler(e, player)} />
+                            <input type="submit" value="Submit" onClick= {()=> this.click(newPlayers)} />
                         </form>
+                        Click Continue after submitting all
                     </div>
                     )}
                 </div>
@@ -76,6 +100,7 @@ class Selection extends React.Component {
         } else {
             return (
                 <div>
+                    (NO PLAYER SELECTED ALL ARTIFICIAL INTELLIGENCE GAME)
                     <li>PLAYER1 = AI1</li>
                     <li>PLAYER2 = AI2</li>
                     <li>PLAYER3 = AI3</li>

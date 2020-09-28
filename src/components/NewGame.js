@@ -14,10 +14,11 @@ class NewGame extends React.Component {
 
     changeHandler = (e) => {
         this.setState({ [e.target.name]: e.target.value })
+        console.log(this.state)
     }
 
     submitHandler = (e) => {
-        console.log('submit new player')
+        console.log('submit new player', this.state)
         e.preventDefault()
         this.props.selectPlayers(this.state)
         this.setState({ 
