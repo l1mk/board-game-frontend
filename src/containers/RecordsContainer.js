@@ -40,8 +40,8 @@ const mapDispatchToProps = dispatch => {
   return {
     fetchAllPlayers: () => dispatch(fetchAllPlayers()),
     fetchAllGames: () => dispatch(fetchAllGames()),
-    fetchDeleteGame: () => dispatch(fetchDeleteGame()),
-    fetchDeletePlayer: () => dispatch(fetchDeletePlayer())
+    fetchDeleteGame: (id) => dispatch(fetchDeleteGame(id)),
+    fetchDeletePlayer: (id) => dispatch(fetchDeletePlayer(id))
   }
 }
 export default connect(mapStateToProps, mapDispatchToProps)(RecordsContainer)
