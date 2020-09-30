@@ -40,5 +40,4 @@ class PlayerInput extends React.Component {
     }
 }
 
-
 export default connect(null, {fetchAddPlayer}) (PlayerInput)

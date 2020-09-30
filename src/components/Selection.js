@@ -24,10 +24,10 @@ class Selection extends React.Component {
             console.log(this.props.selectedPlayers.player4 === "player4")
             newPlayers.push(this.props.selectedPlayers.player4)
         } 
-        console.log('newplayers', newPlayers, newPlayers.length > 0)
         return newPlayers
     }
     
+
     changeHandler = (e, player) => {
         if (player === "player1") {
             this.setState({ player1: {name: e.target.value} })
@@ -74,9 +74,7 @@ class Selection extends React.Component {
     render(){
         console.log('selection component', this.props)
         console.log('selected players', this.props.selectedPlayers)
-        console.log('values', this.props.selectedPlayers.player1)
     
-       
         let newPlayers = []
         this.playerExist(newPlayers)
 
@@ -91,9 +89,9 @@ class Selection extends React.Component {
                             <input type="text" placeholder="Name" name={player} value={this.state.player} onChange={(e)=> this.changeHandler(e, player)} />
                             <input type="submit" value="Submit" onClick= {()=> this.click(newPlayers)} />
                         </form>
-                        Click Continue after submitting all
                     </div>
                     )}
+                         Click Continue after submitting all
                 </div>
                 )
            
