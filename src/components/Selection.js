@@ -67,9 +67,9 @@ class Selection extends React.Component {
         return str.charAt(0).toUpperCase() + str.slice(1);
         }
 
-    click = (newPlayers) => {
-        console.log('click', newPlayers)
-    }
+    //click = (newPlayers) => {
+    //    console.log('click', newPlayers)
+    //}
 
     render(){
         console.log('selection component', this.props)

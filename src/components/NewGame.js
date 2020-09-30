@@ -1,30 +1,41 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 //newGame component
 class NewGame extends React.Component {
   
     state = {
-        player1: "AI1",
-        player2: "AI2",
-        player3: "AI3" ,
-        player4: "AI4",
+      playerSelected : [
+          {player1: {name: "AI1"},
+          player2: {name: "AI2"},
+          player3: {name:"AI3"},
+          player4: {name:"AI4"}},
+      ]
     }
 
     changeHandler = (e) => {
-        this.setState({ [e.target.name]: e.target.value })
-        console.log(this.state)
+        console.log("player name", {[e.target.name]: {name: e.target.value}} )
+        let player = {[e.target.name]: {name: e.target.value}}
+        let state = this.state.playerSelected[0]
+        let updatedPlayer = Object.assign(state, player)
+        console.log("player", player)
+        console.log("state ", state)
+        console.log("updated players", updatedPlayer)
+        this.setState({ playerSelected: [...this.state.playerSelected, {updatedPlayer}]})
+        console.log("updated state", this.state.playerSelected[0])
     }
 
     submitHandler = (e) => {
         e.preventDefault()
+
         this.props.selectPlayers(this.state)
         this.setState({ 
-            player1: "AI1",
-            player2: "AI2",
-            player3: "AI3" ,
-            player4: "AI4",
+          playerSelected : [
+            {player1: {name: "AI1"},
+            player2: {name: "AI2"},
+            player3: {name:"AI3"},
+            player4: {name:"AI4"}},
+        ]
         })
     }
 
@@ -67,11 +78,5 @@ class NewGame extends React.Component {
   }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-      selectPlayers: (players) => { dispatch({type: 'SELECTED_PLAYERS', selectedPlayers: players})}
-    }
-  }
  
-
-export default connect(null, mapDispatchToProps) (NewGame)
+export default (NewGame)

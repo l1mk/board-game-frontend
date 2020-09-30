@@ -1,20 +1,26 @@
 import React from 'react';
 import NewGame from '../components/NewGame'
-
+import { connect } from 'react-redux';
 
 class NewGameContainer extends React.Component {
 
   render(){
-    console.log('new game container render console')
+    console.log('new game container render console', this.props)
     return (
       <div className="nav">
         <h1>NewGame Container</h1>
-        <NewGame />
+        <NewGame selectPlayers = {this.props.selectPlayers} />
       </div>
     );
   }
 }
 
  
+const mapDispatchToProps = dispatch => {
+  return {
+    selectPlayers: (players) => { dispatch({type: 'SELECTED_PLAYERS', selectedPlayers: players})}
+  }
+}
 
-export default (NewGameContainer)
+
+export default connect(null, mapDispatchToProps) (NewGameContainer)
