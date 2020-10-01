@@ -18,7 +18,7 @@ class NewGameContainer extends React.Component {
  
 const mapDispatchToProps = dispatch => {
   return {
-    selectPlayers: (players) => { dispatch({type: 'SELECTED_PLAYERS', selectedPlayers: players})}
+    selectPlayers: (players) => { dispatch({type: 'SELECTED_PLAYERS', payload: players})}
   }
 }
 

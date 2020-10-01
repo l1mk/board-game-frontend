@@ -27,8 +27,7 @@ class NewGame extends React.Component {
 
     submitHandler = (e) => {
         e.preventDefault()
-
-        this.props.selectPlayers(this.state)
+        this.props.selectPlayers(this.state.playerSelected[0])
         this.setState({ 
           playerSelected : [
             {player1: {name: "AI1"},

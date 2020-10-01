@@ -4,7 +4,7 @@ const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, pla
         console.log('selected players', action, state)
         return {
           ...state,
-          selectedPlayers: [...this.state.selectedPlayers, action.selectedPlayers]
+          selectedPlayers: [action.payload]
         }
 
       default:
