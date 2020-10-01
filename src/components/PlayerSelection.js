@@ -16,34 +16,41 @@ class PlayerSelection extends React.Component {
         console.log('submit new player', a)
         e.preventDefault()
         if (a === "player1"){
+            let updatedPlayer = {player1: {name: this.state.player1.name}}
             this.props.fetchAddPlayer(this.state.player1)
             this.setState({
                 ...this.state, player1: {name: ""}
              })
+             this.props.updateselectedPlayers(updatedPlayer)
              alert ('player1 created')
         }
         else if (a === "player2"){
+            let updatedPlayer = {player2: {name: this.state.player2.name}}
             this.props.fetchAddPlayer(this.state.player2)
             this.setState({
                 ...this.state, player2: {name: ""}
              })
-             alert ('player2 created')
+             this.props.updateselectedPlayers(updatedPlayer)
+             alert ('player1 created')
         }
         else if (a === "player3"){
+            let updatedPlayer = {player3: {name: this.state.player3.name}}
             this.props.fetchAddPlayer(this.state.player3)
             this.setState({
                 ...this.state, player3: {name: ""}
              })
+             this.props.updateselectedPlayers(updatedPlayer)
              alert ('player3 created')
         }
         else if (a === "player4"){
+            let updatedPlayer = {player4: {name: this.state.player4.name}}
             this.props.fetchAddPlayer(this.state.player4)
             this.setState({
                 ...this.state, player4: {name: ""}
              })
+             this.props.updateselectedPlayers(updatedPlayer)
              alert ('player4 created')
         }
-
     } 
 
 
@@ -138,9 +145,14 @@ class PlayerSelection extends React.Component {
             </div>
         )
     }
-
-   
-
 }
 
-export default connect(null, {fetchAddPlayer}) (PlayerSelection)
+const mapDispatchToProps = dispatch => {
+    return {
+    fetchAddPlayer: (player) => dispatch(fetchAddPlayer(player)),
+    updateselectedPlayers: (player) => { dispatch({type: 'UPDATE_SELECTED_PLAYERS', payload: player})}
+    }
+  }
+
+
+export default connect(null,mapDispatchToProps)(PlayerSelection)

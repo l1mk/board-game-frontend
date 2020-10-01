@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import PlayerSelection from '../components/PlayerSelection';
 
 
+
 class PlayerSelectionContainer extends React.Component {
 
   capitalize = (str) => {
@@ -14,7 +15,7 @@ class PlayerSelectionContainer extends React.Component {
     return (
       <div>
           <h1>Selection Container</h1>
-          <PlayerSelection selectedPlayers = {this.props.selectedPlayers} />
+          <PlayerSelection selectedPlayers = {this.props.selectedPlayers} fetchAddPlayer={this.props.fetchAddPlayer} />
       </div>
     );
   }
@@ -25,6 +26,7 @@ const mapStateToProps = (store) => {
       selectedPlayers: store.newGameReducer.selectedPlayers,
     }
   }
+
 
   export default connect(mapStateToProps)(PlayerSelectionContainer)
  

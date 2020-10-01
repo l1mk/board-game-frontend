@@ -6,6 +6,12 @@ const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, pla
           ...state,
           selectedPlayers: [action.payload]
         }
+        case 'UPDATE_SELECTED_PLAYERS':
+          console.log('update selected players', action, state)
+          return {
+            ...state,
+            selectedPlayers: [Object.assign(state.selectedPlayers[0], action.payload)]
+          }
 
       default:
         return state;
