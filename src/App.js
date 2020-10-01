@@ -23,7 +23,7 @@ class App extends React.Component {
         < Route path='/records' component={RecordsContainer} />
         < Route path='/about' component={AboutContainer} />
         < Route path='/newgame' component={NewGameContainer} />
-        < Route path='/selection' component={PlayerSelectionContainer} />
+        < Route path='/player-selection' component={PlayerSelectionContainer} />
         </Switch>
       </div>
     );

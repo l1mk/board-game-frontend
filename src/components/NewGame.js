@@ -66,7 +66,7 @@ class NewGame extends React.Component {
              </select><br></br>
              <input type = "submit" value = "Submit"></input>
           </form>
-          <NavLink to="/selection"> Continue to... </NavLink>
+          <NavLink to="/player-selection"> Continue to... </NavLink>
         <div>
         </div>
         

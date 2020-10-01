@@ -1,6 +1,6 @@
 import React from 'react'
-import { connect } from 'react-redux';
-import { fetchAddPlayer } from '../actions/fetchAddPlayer'
+//import { NavLink } from 'react-router-dom';
+import OrderSelectionContainer from '../containers/OrderSelectionContainer';
 
 //List of Player that are going to play and form for new players
 class PlayerSelection extends React.Component {
@@ -141,18 +141,10 @@ class PlayerSelection extends React.Component {
                 {this.Player4()}
 
                 <br></br>
-                Press here to Continue...
+                <OrderSelectionContainer selectedPlayers = {this.props.selectedPlayers} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns}/>
             </div>
         )
     }
 }
 
-const mapDispatchToProps = dispatch => {
-    return {
-    fetchAddPlayer: (player) => dispatch(fetchAddPlayer(player)),
-    updateselectedPlayers: (player) => { dispatch({type: 'UPDATE_SELECTED_PLAYERS', payload: player})}
-    }
-  }
-
-
-export default connect(null,mapDispatchToProps)(PlayerSelection)
+export default PlayerSelection

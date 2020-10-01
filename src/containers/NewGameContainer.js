@@ -7,7 +7,7 @@ class NewGameContainer extends React.Component {
   render(){
     console.log('new game container render console', this.props)
     return (
-      <div className="nav">
+      <div>
         <h1>NewGame Container</h1>
         <NewGame selectPlayers = {this.props.selectPlayers} />
       </div>
