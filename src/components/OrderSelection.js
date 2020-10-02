@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 //order selection after rolling the dice
 class OrderSelection extends React.Component {
@@ -40,13 +41,14 @@ class OrderSelection extends React.Component {
         console.log('order selection component', this.props, this.state)
         return (
             <div>
-                <button onClick= {()=>this.rollDice()} >Roll Dice</button><br></br>
+                <button onClick= {()=>this.rollDice()} >Roll Dices</button><br></br>
                 <div>
                     <li>Player1: {this.state.rolls[0]}<br></br></li> 
                     <li>Player2: {this.state.rolls[1]}<br></br></li> 
                     <li>Player3: {this.state.rolls[2]}<br></br></li> 
                     <li>Player4: {this.state.rolls[3]}<br></br></li> 
                </div>
+               <NavLink to="/board"> Start Game!</NavLink>
             </div>
         )
     }
