@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { fetchAddPlayer } from '../actions/fetchAddPlayer'
+import { fetchAddPlayer } from '../actions/fetchAddPlayer';
+import { fetchAllCharacters } from '../actions/fetchAllCharacters';
 import PlayerSelection from '../components/PlayerSelection';
 
 
@@ -17,7 +18,7 @@ class PlayerSelectionContainer extends React.Component {
     return (
       <div>
           <h1>Selection Container</h1>
-          <PlayerSelection selectedPlayers = {this.props.selectedPlayers} fetchAddPlayer={this.props.fetchAddPlayer} updateselectedPlayers={this.props.updateselectedPlayers} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns}/>
+          <PlayerSelection selectedPlayers = {this.props.selectedPlayers} fetchAddPlayer={this.props.fetchAddPlayer} updateselectedPlayers={this.props.updateselectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns} characters = {this.props.characters} fetchAllCharacters={this.props.fetchAllCharacters}/>
       </div>
     );
   }
@@ -29,12 +30,15 @@ const mapStateToProps = (store) => {
       playerOrder: store.newGameReducer.playerOrder,
       currentPLayer: store.newGameReducer.currentPLayer,
       turns: store.newGameReducer.turns,
+      characters: store.charactersReducer.characters,
     }
   }
   const mapDispatchToProps = dispatch => {
     return {
     fetchAddPlayer: (player) => dispatch(fetchAddPlayer(player)),
-    updateselectedPlayers: (player) => { dispatch({type: 'UPDATE_SELECTED_PLAYERS', payload: player})}
+    updateselectedPlayers: (player) => { dispatch({type: 'UPDATE_SELECTED_PLAYERS', payload: player})},
+    updatePlayersOrder: (players) => { dispatch({type: 'UPDATE_PLAYERS_ORDER', payload: players})},
+    fetchAllCharacters: () => dispatch(fetchAllCharacters())
     }
   }
 

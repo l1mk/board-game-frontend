@@ -12,6 +12,12 @@ const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, pla
             ...state,
             selectedPlayers: [Object.assign(state.selectedPlayers[0], action.payload)]
           }
+          case 'UPDATE_PLAYERS_ORDER':
+            console.log('update players order', action, state)
+            return {
+              ...state,
+              playerOrder: action.payload
+            }
 
       default:
         return state;

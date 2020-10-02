@@ -1,5 +1,4 @@
 import React from 'react'
-//import { NavLink } from 'react-router-dom';
 import OrderSelectionContainer from '../containers/OrderSelectionContainer';
 
 //List of Player that are going to play and form for new players
@@ -139,9 +138,8 @@ class PlayerSelection extends React.Component {
                 {this.Player2()}
                 {this.Player3()}
                 {this.Player4()}
-
                 <br></br>
-                <OrderSelectionContainer selectedPlayers = {this.props.selectedPlayers} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns}/>
+                <OrderSelectionContainer selectedPlayers = {this.props.selectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns} characters = {this.props.characters} fetchAllCharacters={this.props.fetchAllCharacters}/>
             </div>
         )
     }
