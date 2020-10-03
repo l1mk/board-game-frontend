@@ -9,12 +9,21 @@ class BoardContainer extends React.Component {
     return (
       <div>
           <h1>Board Container</h1>
+          <div style= {{
+          position: 'relative',
+          height: 500,
+          width: 500,
+          backgroundColor: 'grey',
+          border: '1px solid black',
+          objectFit: 'fit',
+          display: 'flex',
+          }}>
+
           < Board />
+          </div>
       </div>
     );
   }
 }
-
- 
 
 export default (BoardContainer)
