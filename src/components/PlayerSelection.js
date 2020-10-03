@@ -30,7 +30,7 @@ class PlayerSelection extends React.Component {
                 ...this.state, player2: {name: ""}
              })
              this.props.updateselectedPlayers(updatedPlayer)
-             alert ('player1 created')
+             alert ('player2 created')
         }
         else if (a === "player3"){
             let updatedPlayer = {player3: {name: this.state.player3.name}}

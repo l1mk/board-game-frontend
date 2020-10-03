@@ -33,7 +33,7 @@ function Board() {
                 {row.map((tile, x ) => (
                     <div key = {x}
                         style ={{
-                            border: '1px solid blue',
+                            border: '1px solid white',
                             height: 23,
                             width: 23
                         }}

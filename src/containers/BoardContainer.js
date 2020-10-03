@@ -1,5 +1,6 @@
 import React from 'react';
 import Board from '../components/Board';
+import Player from '../components/Player';
 
 
 class BoardContainer extends React.Component {
@@ -11,15 +12,15 @@ class BoardContainer extends React.Component {
           <h1>Board Container</h1>
           <div style= {{
           position: 'relative',
-          height: 500,
-          width: 500,
+          height: '500px',
+          width: '500px',
           backgroundColor: 'grey',
           border: '1px solid black',
-          objectFit: 'fit',
-          display: 'flex',
+          margin: '20px auto'
           }}>
 
           < Board />
+          < Player />
           </div>
       </div>
     );
