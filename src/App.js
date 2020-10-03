@@ -1,4 +1,5 @@
 import React from 'react';
+import './index.css';
 import { Route, Switch } from 'react-router-dom'
 import NavContainer from './containers/NavContainer';
 import PokedexContainer from './containers/PokedexContainer';

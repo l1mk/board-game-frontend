@@ -1,26 +1,35 @@
 import React from 'react';
-import pika from '../images/pika.png'
+
 
 //Player rendering and game start
-function Player() {
+class Player extends React.Component {
 
-    let position = [0, 0]
+    constructor(props){
+        console.log('constructor', props)
+        super()
+        this.state = {position : props.position}
+    }
+    
+    render(){
 
-  return (
-    <div 
-     style = {{
-         position: 'absolute',
-         top: position[1],
-         left: position[0],
-         backgroundImage: `url('${pika}')`,
-         backgroundPosition: '0 0',
-         width: '23px',
-         height: '23px'
-     }}
-    >
+      return (
+        <div 
+         style = {{
+             position: 'absolute',
+             top: this.state.position[1],
+             left: this.state.position[0],
+             backgroundImage: `url(${this.props.url})`,
+             backgroundPosition: '0 0',
+             width: '23px',
+             height: '23px'
+         }}
+        >
+    
+        </div>
+      );
 
-    </div>
-  );
+    }
+
 }
 
 export default Player
