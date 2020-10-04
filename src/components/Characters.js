@@ -6,15 +6,22 @@ function Characters(props) {
     console.log('games component', props);
 
     return (
-        <div>
+        <div 
+            style = {{
+                textAlign: 'right',
+                position: 'absolute',
+                right: '16px',
+                top: '80px'
+        }}>
             <h5>PLAYERS</h5>
            { props.playerOrder.map((player, index) => 
                                <div key = {index}>
                                <h4>{props.capitalize(player.name)}:</h4>
                                <li>{player.character.pokemon}</li>
-                               <span>- ATK: {player.character.attack} - DEF: {player.character.defense} - SPD: {player.character.speed} - LCK: {player.character.luck} </span>
-                               <span> BATTLEPOINTS: {player.character.battlepoints} </span>
-                               <span> EXPERIENCE: {player.character.experience} </span>
+                               <span>ATK: {player.character.attack} - DEF: {player.character.defense}</span><br></br> 
+                               <span>SPD: {player.character.speed} - LCK: {player.character.luck} </span><br></br>
+                               <span>- BATTLEPOINTS: {player.character.battlepoints} </span><br></br>
+                               <span>- EXPERIENCE: {player.character.experience} </span><br></br>
                                </div>)}
         </div>
     );
