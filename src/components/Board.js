@@ -17,11 +17,6 @@ function Board() {
     }
     console.dir(tiles)
 
-  //const squares = []
-  //for (let i=0; i<20; i++){
-  //    squares.push(<div style={{relative: 'absolute', border: 'solid 1px black', height: 23, width: 23}}>row {i+1}</div>)
-  //}
-
   return (
     <div 
         style ={{

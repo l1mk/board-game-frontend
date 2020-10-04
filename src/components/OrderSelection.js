@@ -7,6 +7,7 @@ class OrderSelection extends React.Component {
         state = {rolls : []}
 
      rollDice = () => {
+        console.log("rolling dice")
         let roll1 = 1 + Math.floor(Math.random() * 6)
         let roll2 = 1 + Math.floor(Math.random() * 6)
             if (roll1 === roll2) {
@@ -22,10 +23,10 @@ class OrderSelection extends React.Component {
             }
         this.setState({ rolls: [roll1, roll2, roll3, roll4] }) 
    
-        let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, character: this.props.characters[0]}
-        let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, character: this.props.characters[1]}
-        let player3 = {order: roll3, name: this.props.selectedPlayers[0].player3.name, character: this.props.characters[2]}
-        let player4 = {order: roll4, name: this.props.selectedPlayers[0].player4.name, character: this.props.characters[3]}
+        let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, position: [0,0], character: this.props.characters[0]}
+        let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, position: [0,0], character: this.props.characters[1]}
+        let player3 = {order: roll3, name: this.props.selectedPlayers[0].player3.name, position: [0,0], character: this.props.characters[2]}
+        let player4 = {order: roll4, name: this.props.selectedPlayers[0].player4.name, position: [0,0], character: this.props.characters[3]}
         
         this.orderPlayers(player1, player2, player3, player4 )
     }
@@ -48,7 +49,7 @@ class OrderSelection extends React.Component {
                     <li>Player3: {this.state.rolls[2]}<br></br></li> 
                     <li>Player4: {this.state.rolls[3]}<br></br></li> 
                </div>
-               <NavLink to="/board"> Start Game!</NavLink>
+               <NavLink to="/game"> Start Game!</NavLink>
             </div>
         )
     }

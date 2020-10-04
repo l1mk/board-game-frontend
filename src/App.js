@@ -7,7 +7,7 @@ import RecordsContainer from './containers/RecordsContainer';
 import AboutContainer from './containers/AboutContainer';
 import NewGameContainer from './containers/NewGameContainer';
 import PlayerSelectionContainer from './containers/PlayerSelectionContainer';
-import BoardContainer from './containers/BoardContainer';
+import GameContainer from './containers/GameContainer';
 
 class App extends React.Component {
 
@@ -26,7 +26,7 @@ class App extends React.Component {
         < Route path='/about' component={AboutContainer} />
         < Route path='/newgame' component={NewGameContainer} />
         < Route path='/player-selection' component={PlayerSelectionContainer} />
-        < Route path='/board' component={BoardContainer} />
+        < Route path='/game' component={GameContainer} />
         </Switch>
       </div>
     );
