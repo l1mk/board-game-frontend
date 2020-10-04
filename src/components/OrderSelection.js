@@ -6,7 +6,7 @@ class OrderSelection extends React.Component {
 
         state = {rolls : []}
 
-     rollDice = () => {
+     rollDices = () => {
         console.log("rolling dice")
         let roll1 = 1 + Math.floor(Math.random() * 6)
         let roll2 = 1 + Math.floor(Math.random() * 6)
@@ -42,7 +42,7 @@ class OrderSelection extends React.Component {
         console.log('order selection component', this.props, this.state)
         return (
             <div>
-                <button onClick= {()=>this.rollDice()} >Roll Dices</button><br></br>
+                <button onClick= {()=>this.rollDices()} >Roll Dices</button><br></br>
                 <div>
                     <li>Player1: {this.state.rolls[0]}<br></br></li> 
                     <li>Player2: {this.state.rolls[1]}<br></br></li> 
