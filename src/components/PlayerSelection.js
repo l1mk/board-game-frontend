@@ -139,7 +139,7 @@ class PlayerSelection extends React.Component {
                 {this.Player3()}
                 {this.Player4()}
                 <br></br>
-                <OrderSelectionContainer selectedPlayers = {this.props.selectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns} characters = {this.props.characters} fetchAllCharacters={this.props.fetchAllCharacters}/>
+                <OrderSelectionContainer selectedPlayers = {this.props.selectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPlayer={this.props.currentPlayer} turns={this.props.turns} characters = {this.props.characters} fetchAllCharacters={this.props.fetchAllCharacters} updateCurrentPlayer={this.props.updateCurrentPlayer}/>
             </div>
         )
     }

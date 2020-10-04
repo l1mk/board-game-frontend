@@ -1,4 +1,4 @@
-const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, player2: {name: "AI2"}, player3: {name: "AI3"}, player4: {name: "AI4"}}], playerOrder: [], turns: 0, currentPLayer: {} }, action) => {
+const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, player2: {name: "AI2"}, player3: {name: "AI3"}, player4: {name: "AI4"}}], playerOrder: [], turns: 0, currentPlayer: {} }, action) => {
     switch(action.type) {
       case 'SELECTED_PLAYERS':
         console.log('selected players', action, state)
@@ -17,6 +17,18 @@ const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, pla
             return {
               ...state,
               playerOrder: action.payload
+            }
+          case 'UPDATE_CURRENT_PLAYER':
+            console.log('update current player', action, state)
+            return {
+              ...state, 
+              currentPlayer: action.payload
+            }
+          case 'UPDATE_PLAYER_ORDER':
+            console.log('update player', action, state)
+            return {
+              ...state, 
+              playerOrder: [...state.playerOrder, action.payload]
             }
 
       default:

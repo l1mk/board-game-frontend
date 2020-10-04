@@ -2,7 +2,7 @@ import React from 'react';
 import Board from '../components/Board';
 import Player from '../components/Player';
 import pokeball from '../images/pokeball.jpg';
-import pikachu from '../images/pikachu.png';
+
 
 class BoardContainer extends React.Component {
 
@@ -10,10 +10,10 @@ class BoardContainer extends React.Component {
         if (this.props.playerOrder.length !== 0 ){
             return (
             <div>
-                < Player position = {this.props.playerOrder[0].position} url = {pikachu}/>
-                < Player position = {this.props.playerOrder[1].position} url = {this.props.playerOrder[1].url[0]} />
-                < Player position = {this.props.playerOrder[2].position} url = {this.props.playerOrder[2].url[0]} />
-                < Player position = {this.props.playerOrder[3].position} url = {this.props.playerOrder[3].url[0]} />
+                < Player position = {this.props.playerOrder[0].position} url = {this.props.playerOrder[1].url}/>
+                < Player position = {this.props.playerOrder[1].position} url = {this.props.playerOrder[1].url} />
+                < Player position = {this.props.playerOrder[2].position} url = {this.props.playerOrder[2].url} />
+                < Player position = {this.props.playerOrder[3].position} url = {this.props.playerOrder[3].url} />
       
             </div>)
         }

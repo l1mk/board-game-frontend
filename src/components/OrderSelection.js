@@ -40,6 +40,8 @@ class OrderSelection extends React.Component {
         let playerOrder = [player1, player2, player3, player4]
         let playerOrdered = playerOrder.sort((a, b)=> (a.order > b.order) ? 1 : -1)
         this.props.updatePlayersOrder(playerOrdered)
+        console.log('updating current player to', playerOrdered[0])
+        this.props.updateCurrentPlayer(playerOrdered[0])
     }
 
     render(){

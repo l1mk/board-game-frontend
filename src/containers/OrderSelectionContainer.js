@@ -13,7 +13,7 @@ class OrderSelectionContainer extends React.Component {
     return (
       <div>
         <h1>Order Selection Container</h1>
-        <OrderSelection  selectedPlayers = {this.props.selectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPLayer={this.props.currentPLayer} turns={this.props.turns} characters = {this.props.characters} />
+        <OrderSelection  selectedPlayers = {this.props.selectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPlayer={this.props.currentPlayer} turns={this.props.turns} characters = {this.props.characters} updateCurrentPlayer={this.props.updateCurrentPlayer}/>
       </div>
     );
   }

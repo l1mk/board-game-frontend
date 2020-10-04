@@ -11,8 +11,8 @@ class Game extends React.Component {
     return (
       <div>
           <h1>Game Container</h1>
-         <BoardContainer playerOrder = {this.props.playerOrder}/>
-         <UIContainer playerOrder = {this.props.playerOrder} />
+         <BoardContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
+         <UIContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
       </div>
     );
   }
@@ -22,9 +22,16 @@ class Game extends React.Component {
 const mapStateToProps = (store) => {
     return {
       playerOrder: store.newGameReducer.playerOrder,
-      currentPLayer: store.newGameReducer.currentPLayer,
+      currentPlayer: store.newGameReducer.currentPlayer,
       turns: store.newGameReducer.turns,
     }
   }
 
-export default connect(mapStateToProps)(Game)
+  const mapDispatchToProps = dispatch => {
+    return {
+    updateCurrentPlayer: (player) => { dispatch({type: 'UPDATE_CURRENT_PLAYER', payload: player})},
+    updatePlayer: (player) => { dispatch({type: 'UPDATE_PLAYER_ORDER', payload: player})},
+    }
+  }
+
+export default connect(mapStateToProps, mapDispatchToProps)(Game)
