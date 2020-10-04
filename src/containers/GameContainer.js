@@ -11,7 +11,7 @@ class Game extends React.Component {
     return (
       <div>
           <h1>Game Container</h1>
-         <BoardContainer />
+         <BoardContainer playerOrder = {this.props.playerOrder}/>
          <UIContainer playerOrder = {this.props.playerOrder} />
       </div>
     );

@@ -5,7 +5,7 @@ import React from 'react';
 class Player extends React.Component {
 
     constructor(props){
-        console.log('constructor', props)
+        console.log('constructor', props.url)
         super()
         this.state = {position : props.position}
     }
@@ -16,6 +16,7 @@ class Player extends React.Component {
         <div 
          style = {{
              position: 'absolute',
+             objectFit: 'cover',
              top: this.state.position[1],
              left: this.state.position[0],
              backgroundImage: `url(${this.props.url})`,

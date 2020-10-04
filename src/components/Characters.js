@@ -17,7 +17,7 @@ function Characters(props) {
            { props.playerOrder.map((player, index) => 
                                <div key = {index}>
                                <h4>{props.capitalize(player.name)}:</h4>
-                               <li>{player.character.pokemon}</li>
+                               <li>{props.capitalize(player.character.pokemon)}</li>
                                <span>ATK: {player.character.attack} - DEF: {player.character.defense}</span><br></br> 
                                <span>SPD: {player.character.speed} - LCK: {player.character.luck} </span><br></br>
                                <span>- BATTLEPOINTS: {player.character.battlepoints} </span><br></br>

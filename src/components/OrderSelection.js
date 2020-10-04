@@ -1,5 +1,9 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import jigglypuff from '../images/jigglypuff.png';
+import eevee from '../images/eevee.png';
+import togepi from '../images/togepi.png';
+import pikachu from '../images/pikachu.png';
 
 //order selection after rolling the dice
 class OrderSelection extends React.Component {
@@ -23,10 +27,10 @@ class OrderSelection extends React.Component {
             }
         this.setState({ rolls: [roll1, roll2, roll3, roll4] }) 
    
-        let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, position: [0,0], character: this.props.characters[0]}
-        let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, position: [0,0], character: this.props.characters[1]}
-        let player3 = {order: roll3, name: this.props.selectedPlayers[0].player3.name, position: [0,0], character: this.props.characters[2]}
-        let player4 = {order: roll4, name: this.props.selectedPlayers[0].player4.name, position: [0,0], character: this.props.characters[3]}
+        let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, position: [0,0], character: this.props.characters[0], url: pikachu}
+        let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, position: [0,0], character: this.props.characters[1], url: eevee}  
+        let player3 = {order: roll3, name: this.props.selectedPlayers[0].player3.name, position: [0,0], character: this.props.characters[2], url: jigglypuff}
+        let player4 = {order: roll4, name: this.props.selectedPlayers[0].player4.name, position: [0,0], character: this.props.characters[3], url: togepi}
         
         this.orderPlayers(player1, player2, player3, player4 )
     }
@@ -39,7 +43,7 @@ class OrderSelection extends React.Component {
     }
 
     render(){
-        console.log('order selection component', this.props, this.state)
+        console.log('order selection component', this.props, this.state, pikachu)
         return (
             <div>
                 <button onClick= {()=>this.rollDices()} >Roll Dices</button><br></br>
