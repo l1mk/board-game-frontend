@@ -19,5 +19,4 @@ class OrderSelectionContainer extends React.Component {
   }
 }
 
-
 export default OrderSelectionContainer

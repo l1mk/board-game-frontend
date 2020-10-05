@@ -1,7 +1,6 @@
 import React from 'react';
 import About from '../components/About';
 
-
 class AboutContainer extends React.Component {
 
   render(){
@@ -14,7 +13,5 @@ class AboutContainer extends React.Component {
     );
   }
 }
-
- 
 
 export default (AboutContainer)

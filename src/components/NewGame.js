@@ -39,7 +39,7 @@ class NewGame extends React.Component {
     }
 
   render(){
-    console.log('about render console')
+    console.log('new game player selection render console')
     return (
       <div>
           <form onSubmit={this.submitHandler}>
@@ -76,6 +76,5 @@ class NewGame extends React.Component {
     );
   }
 }
-
  
 export default (NewGame)

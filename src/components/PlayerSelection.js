@@ -5,7 +5,6 @@ import OrderSelectionContainer from '../containers/OrderSelectionContainer';
 class PlayerSelection extends React.Component {
 
     state = {player1: {name: ""}, player2: {name: ""}, player3: {name: ""}, player4: {name: ""}}
-    
 
     changeHandler = (e) => {
         this.setState({[e.target.name]: {name: e.target.value}})

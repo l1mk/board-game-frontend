@@ -1,10 +1,7 @@
 import React from 'react';
 import Players from '../components/Players';
 
-
-
 class PlayersContainer extends React.Component {
-
 
   render(){
     console.log('player container render console', this.props)
@@ -16,6 +13,5 @@ class PlayersContainer extends React.Component {
     );
   }
 }
-
 
 export default (PlayersContainer)

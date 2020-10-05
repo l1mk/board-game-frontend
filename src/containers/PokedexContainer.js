@@ -3,8 +3,6 @@ import { connect } from 'react-redux';
 import { fetchAllCharacters } from '../actions/fetchAllCharacters';
 import Pokedex from '../components/Pokedex';
 
-
-
 class PokedexContainer extends React.Component {
 //fetch all characters after mounting component
   componentDidMount(){
@@ -39,4 +37,5 @@ const mapDispatchToProps = dispatch => {
     fetchAllCharacters: () => dispatch(fetchAllCharacters())
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(PokedexContainer)

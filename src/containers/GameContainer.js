@@ -3,11 +3,10 @@ import BoardContainer from './BoardContainer';
 import UIContainer from './UIContainer';
 import { connect } from 'react-redux';
 
-
 class Game extends React.Component {
 
   render(){
-    console.log('Game container render console', this.props)
+    console.log('Game start container render console', this.props)
     return (
       <div>
           <h1>Game Container</h1>

@@ -44,4 +44,5 @@ const mapDispatchToProps = dispatch => {
     fetchDeletePlayer: (id) => dispatch(fetchDeletePlayer(id))
   }
 }
+
 export default connect(mapStateToProps, mapDispatchToProps)(RecordsContainer)

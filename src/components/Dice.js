@@ -16,15 +16,18 @@ class Dice extends React.Component {
         this.state = {url : {dice1}, counter: 0}
     }
 
+    updatePosition = (currentPlayer, dice) => {
+      console.log('update position for', currentPlayer, dice)
+      let currentX = currentPlayer.position[0]
+      let currentY = currentPlayer.position[1]
+      let updatedPlayer = currentPlayer
+      updatedPlayer.position = [currentX + dice *25, currentY]
+      this.props.updatePlayer(updatedPlayer)
+    }
+
     updateCurrentPlayer = (counter) => {
       console.log('update current player to', this.props.playerOrder[counter])
       this.props.updateCurrentPlayer(this.props.playerOrder[counter])
-    }
-
-    updatePosition = (currentPlayer, dice) => {
-      console.log('update position for', currentPlayer, dice)
-      currentPlayer.position = [dice *25, 0]
-      this.props.updatePlayer(currentPlayer)
     }
 
     rollDice = () => {
@@ -63,7 +66,7 @@ class Dice extends React.Component {
     }
 
     render (){
-        console.log('dice component', this.state);
+        console.log('dice component', this.state, 'with props', this.props);
         return (
             <div>
               <h4>Current Turn is for: {this.props.currentPlayer.name}</h4>
@@ -74,8 +77,8 @@ class Dice extends React.Component {
                         right: '16px',
                         bottom: '80px',
                         backgroundImage: `url(${this.state.url})`,
-                        width: '100px',
-                        height: '100px',
+                        width: '60px',
+                        height: '60px',
                     }}
                 />
             </div>

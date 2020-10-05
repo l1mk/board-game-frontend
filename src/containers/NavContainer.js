@@ -1,7 +1,6 @@
 import React from 'react';
 import Nav from '../components/Nav'
 
-
 class NavContainer extends React.Component {
 
   render(){
@@ -14,7 +13,5 @@ class NavContainer extends React.Component {
     );
   }
 }
-
- 
 
 export default (NavContainer)

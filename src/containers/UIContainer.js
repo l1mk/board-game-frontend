@@ -2,7 +2,6 @@ import React from 'react';
 import Characters from '../components/Characters';
 import Dice from '../components/Dice';
 
-
 class UIContainer extends React.Component {
 
 capitalize = (str) => {
@@ -20,7 +19,5 @@ capitalize = (str) => {
     );
   }
 }
-
- 
 
 export default (UIContainer)

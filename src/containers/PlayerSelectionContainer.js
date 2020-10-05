@@ -4,9 +4,6 @@ import { fetchAddPlayer } from '../actions/fetchAddPlayer';
 import { fetchAllCharacters } from '../actions/fetchAllCharacters';
 import PlayerSelection from '../components/PlayerSelection';
 
-
-
-
 class PlayerSelectionContainer extends React.Component {
 
   capitalize = (str) => {
