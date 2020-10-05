@@ -57,7 +57,7 @@ class Dice extends React.Component {
         counter = 0
       }
       
-    this.setState({...this.state, counter: counter}) 
+    this.setState({counter: counter}) 
     this.updatePosition(this.props.currentPlayer, dice)
     this.updateCurrentPlayer(counter)
     }
@@ -66,6 +66,7 @@ class Dice extends React.Component {
         console.log('dice component', this.state);
         return (
             <div>
+              <h4>Current Turn is for: {this.props.currentPlayer.name}</h4>
                 <button onClick={this.rollDice}>PLAY</button>
                 <div
                     style = {{
