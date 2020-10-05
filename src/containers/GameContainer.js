@@ -30,7 +30,7 @@ const mapStateToProps = (store) => {
   const mapDispatchToProps = dispatch => {
     return {
     updateCurrentPlayer: (player) => { dispatch({type: 'UPDATE_CURRENT_PLAYER', payload: player})},
-    updatePlayer: (player) => { dispatch({type: 'UPDATE_PLAYER_ORDER', payload: player})},
+    updatePlayer: (player) => { dispatch({type: 'UPDATE_PLAYER_INSIDE_ORDER', payload: player})},
     }
   }
 

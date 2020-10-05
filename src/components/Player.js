@@ -5,7 +5,7 @@ import React from 'react';
 class Player extends React.Component {
 
     constructor(props){
-        console.log('constructor', props.url)
+        console.log('Player constructor', props)
         super()
         this.state = {position : props.position}
     }

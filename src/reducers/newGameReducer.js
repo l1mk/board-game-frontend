@@ -24,11 +24,14 @@ const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, pla
               ...state, 
               currentPlayer: action.payload
             }
-          case 'UPDATE_PLAYER_ORDER':
+          case 'UPDATE_PLAYER_INSIDE_ORDER':
             console.log('update player', action, state)
+            let newPlayers = state.playerOrder
+            let foundIndex = newPlayers.findIndex( x => x.name === action.payload.name);
+            newPlayers[foundIndex] = action.payload
             return {
               ...state, 
-              playerOrder: [...state.playerOrder, action.payload]
+              playerOrder: newPlayers
             }
 
       default:

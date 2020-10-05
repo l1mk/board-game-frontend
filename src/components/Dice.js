@@ -10,33 +10,58 @@ import dice6 from '../images/dice6.png';
 
 class Dice extends React.Component {
 
-    constructor(){
+    constructor(props){
+      console.log('dice constructor', props)
         super()
-        this.state = {url : {dice1}}
+        this.state = {url : {dice1}, counter: 0}
     }
-    
+
+    updateCurrentPlayer = (counter) => {
+      console.log('update current player to', this.props.playerOrder[counter])
+      this.props.updateCurrentPlayer(this.props.playerOrder[counter])
+    }
+
+    updatePosition = (currentPlayer, dice) => {
+      console.log('update position for', currentPlayer, dice)
+      currentPlayer.position = [dice *25, 0]
+      this.props.updatePlayer(currentPlayer)
+    }
+
     rollDice = () => {
+      
       let dice =  1 + Math.floor(Math.random() * 6)
       if (dice === 1){
           console.log(dice)
-          this.setState({url: dice1})
+          this.setState({url: dice1, counter: this.state.counter})
       } else if (dice === 2){
         console.log(dice)
-        this.setState({url: dice2})
+        this.setState({url: dice2, counter: this.state.counter})
       } else if (dice === 3){
         console.log(dice)
-        this.setState({url: dice3})
+        this.setState({url: dice3, counter: this.state.counter})
       } else if (dice === 4){
         console.log(dice)
-        this.setState({url: dice4})
+        this.setState({url: dice4, counter: this.state.counter})
       } else if (dice === 5){
         console.log(dice)
-        this.setState({url: dice5})
+        this.setState({url: dice5, counter: this.state.counter})
       } else if (dice === 6){
         console.log(dice)
-        this.setState({url: dice6})
+        this.setState({url: dice6, counter: this.state.counter})
       }
+      let counter = this.state.counter
+
+      if (counter < 3){
+        counter ++
+      } else {
+        counter = 0
+      }
+      
+    this.setState({...this.state, counter: counter}) 
+    this.updatePosition(this.props.currentPlayer, dice)
+    this.updateCurrentPlayer(counter)
     }
+
     render (){
         console.log('dice component', this.state);
         return (

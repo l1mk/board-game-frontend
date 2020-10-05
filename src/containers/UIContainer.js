@@ -15,7 +15,7 @@ capitalize = (str) => {
       <div>
           <h1>UI Container</h1>
           <Characters playerOrder = {this.props.playerOrder} capitalize = {this.capitalize}/>
-          <Dice />
+          <Dice playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
       </div>
     );
   }
