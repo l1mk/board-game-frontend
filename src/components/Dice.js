@@ -16,19 +16,95 @@ class Dice extends React.Component {
         this.state = {url : {dice1}, counter: 0}
     }
 
-    updatePosition = (currentPlayer, dice) => {
-      console.log('update position for', currentPlayer, dice)
-      let currentX = currentPlayer.position[0]
-      let currentY = currentPlayer.position[1]
-      let updatedPlayer = currentPlayer
-      updatedPlayer.position = [currentX + dice *25, currentY]
+    moving = (updatedPlayer) => {
+      console.log('player moving')
       this.props.updatePlayer(updatedPlayer)
     }
+
+    updatePositionOfCurrent = (currentPlayer, dice) => {
+      console.log('update position for', currentPlayer, dice)
+      let currentX = currentPlayer.position[0];
+      let currentY = currentPlayer.position[1];
+      let updatedPlayer = currentPlayer;
+      for (let i= 0; i < dice ; i++){
+        console.log('inside loop', i)
+        if (currentX < 475 && currentY === 0 ){
+          (console.log('increase of 25 for x', updatedPlayer.position))
+          currentX = currentX + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);
+        } else if (currentX <= 475 && currentX > 0 && currentY === 25){
+          (console.log('decrease of 25 for x', updatedPlayer.position))
+          currentX = currentX - 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);
+        } else if (currentX === 0 && currentY === 25){
+          (console.log('increase of 25 for y', updatedPlayer.position))
+          currentY = currentY + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);
+        } else if (currentX >= 0 && currentX < 475 && currentY === 50){
+          (console.log('increase of 25 for x', updatedPlayer.position))
+          currentX = currentX + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);    
+        } else if (currentX === 475 && currentY === 50){
+          (console.log('increase of 25 for y', updatedPlayer.position))
+          currentY = currentY + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);  
+        } else if (currentX <= 475 && currentX >0 && currentY === 75){
+          (console.log('decrease of 25 for x', updatedPlayer.position))
+          currentX = currentX - 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500); 
+        } else if (currentX === 0 && currentY === 75){
+          (console.log('increase of 25 for y', updatedPlayer.position))
+          currentY = currentY + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);           
+        } else if (currentX >= 0 && currentX < 475 && currentY === 100){
+          (console.log('increase of 25 for x', updatedPlayer.position))
+          currentX = currentX + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);  
+        } else if (currentX === 475 && currentY === 100){
+          console.log('GAME OVER')
+          return( 
+          alert (`game over, player ${currentPlayer.name} Won`)
+          )
+        } else if (currentX === 475 && currentY === 0) {
+          currentY = currentY + 25;
+          updatedPlayer.position = [currentX, currentY]
+          setTimeout(() => {
+            this.moving(updatedPlayer);
+            }, 500);
+        
+        }
+    }
+  }
 
     updateCurrentPlayer = (counter) => {
       console.log('update current player to', this.props.playerOrder[counter])
       this.props.updateCurrentPlayer(this.props.playerOrder[counter])
     }
+
 
     rollDice = () => {
       
@@ -61,7 +137,7 @@ class Dice extends React.Component {
       }
       
     this.setState({counter: counter}) 
-    this.updatePosition(this.props.currentPlayer, dice)
+    this.updatePositionOfCurrent(this.props.currentPlayer, dice)
     this.updateCurrentPlayer(counter)
     }
 
