@@ -16,12 +16,17 @@ class RecordsContainer extends React.Component {
     this.props.fetchAllGames()
   }
 
+  capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
+
   render(){
     console.log('records container render console', this.props)
     return (
       <div>
-        <PlayersContainer players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} />
-        <GamesContainer games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} />
+        <PlayersContainer players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} capitalize = {this.capitalize} />
+        <GamesContainer games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} capitalize = {this.capitalize} />
       </div>
     );
   }

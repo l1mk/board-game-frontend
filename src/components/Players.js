@@ -9,7 +9,7 @@ function Players(props) {
         <div>
             <h5>Player Records </h5>
             {props.players.map(player => <li key={player.id}>
-                               Name: {player.name} - Wins: {player.wins} - Loses: {player.loses} <button onClick={() => props.fetchDeletePlayer(player.id)}>Delete</button>
+                               Name: {props.capitalize(player.name)} - Wins: {player.wins} - Loses: {player.loses} <button onClick={() => props.fetchDeletePlayer(player.id)}>Delete</button>
             </li>)}
         </div>
     );

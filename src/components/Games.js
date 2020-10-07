@@ -10,7 +10,7 @@ function Games(props) {
             <h5>Games Played:</h5>
             {props.games.map(game => <li key={game.id}>
                 <span>SESSION: {game.id} </span><br></br>
-                <span>- PLAYER1: {game.player1} /PIKACHU - PLAYER2: {game.player2} /EEVEE - PLAYER3: {game.player3}/JIGGLYPUFF - PLAYER4: {game.player4}/TOGEPI </span>
+                <span>- PLAYER1: {props.capitalize(game.player1)} / {props.capitalize(game.pokemon1)} - PLAYER2: {props.capitalize(game.player2)} / {props.capitalize(game.pokemon2)} - PLAYER3: {props.capitalize(game.player3)}/ {props.capitalize(game.pokemon3)} - PLAYER4: {props.capitalize(game.player4)}/ {props.capitalize(game.pokemon4)} </span>
                 <button onClick={() => props.fetchDeleteGame(game.id)}>Delete</button>
             </li>)}
         </div>

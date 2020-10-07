@@ -6,10 +6,6 @@ import PlayerSelection from '../components/PlayerSelection';
 
 class PlayerSelectionContainer extends React.Component {
 
-  capitalize = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-    }
-
   render(){
     console.log('Selection container render console', this.props)
     return (

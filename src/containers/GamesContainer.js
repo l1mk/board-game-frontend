@@ -8,7 +8,7 @@ class GamesContainer extends React.Component {
     return (
       <div>
           <h1>Games Container</h1>
-          <Games games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} />
+          <Games games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} capitalize={this.props.capitalize} />
       </div>
     );
   }
