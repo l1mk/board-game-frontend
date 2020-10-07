@@ -2,6 +2,7 @@ import React from 'react';
 import BoardContainer from './BoardContainer';
 import UIContainer from './UIContainer';
 import { connect } from 'react-redux';
+import { fetchAddGame } from '../actions/fetchAddGame';
 
 class Game extends React.Component {
 
@@ -11,7 +12,7 @@ class Game extends React.Component {
       <div>
           <h1>Game Container</h1>
          <BoardContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
-         <UIContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
+         <UIContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} />
       </div>
     );
   }
@@ -30,6 +31,7 @@ const mapStateToProps = (store) => {
     return {
     updateCurrentPlayer: (player) => { dispatch({type: 'UPDATE_CURRENT_PLAYER', payload: player})},
     updatePlayer: (player) => { dispatch({type: 'UPDATE_PLAYER_INSIDE_ORDER', payload: player})},
+    addGame: (game) => dispatch(fetchAddGame(game))
     }
   }
 

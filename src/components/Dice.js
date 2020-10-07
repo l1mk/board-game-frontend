@@ -6,7 +6,7 @@ import dice4 from '../images/dice4.png';
 import dice5 from '../images/dice5.png';
 import dice6 from '../images/dice6.png';
 
-//Characters list inside the UI
+//Game Mechanics and dice rendering component
 
 class Dice extends React.Component {
 
@@ -14,6 +14,17 @@ class Dice extends React.Component {
       console.log('dice constructor', props)
         super()
         this.state = {url : {dice1}, counter: 0}
+    }
+
+    addTurn = () => {
+      let turns = this.props.turns + 1
+    }
+
+    gameOver = (currentPlayer) => {
+      console.log('GAME OVER')
+      alert (`game over, player ${currentPlayer.name} Won`)
+      let game = {turns: this.props.turns, player1: this.props.playerOrder[0].name, pokemon1: this.props.playerOrder[0].character.pokemon, player2: this.props.playerOrder[1].name, pokemon2: this.props.playerOrder[1].character.pokemon, player3: this.props.playerOrder[2].name, pokemon3: this.props.playerOrder[2].character.pokemon, player4: this.props.playerOrder[3].name, pokemon4: this.props.playerOrder[3].character.pokemon }
+      this.props.addGame(game)
     }
 
     moving = (updatedPlayer) => {
@@ -85,10 +96,7 @@ class Dice extends React.Component {
             this.moving(updatedPlayer);
             }, 500);  
         } else if (currentX === 475 && currentY === 100){
-          console.log('GAME OVER')
-          return( 
-          alert (`game over, player ${currentPlayer.name} Won`)
-          )
+            this.gameOver(currentPlayer)
         } else if (currentX === 475 && currentY === 0) {
           currentY = currentY + 25;
           updatedPlayer.position = [currentX, currentY]
