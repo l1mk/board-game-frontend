@@ -13,11 +13,12 @@ class Dice extends React.Component {
     constructor(props){
       console.log('dice constructor', props)
         super()
-        this.state = {url : {dice1}, counter: 0}
+        this.state = {url : {dice1}, counter: 0, turns: 0}
     }
 
-    addTurn = () => {
-      let turns = this.props.turns + 1
+    addTurn = (turns) => {
+      console.log('turns:', turns)
+      this.props.updateTurns(turns)
     }
 
     gameOver = (currentPlayer) => {
@@ -96,7 +97,9 @@ class Dice extends React.Component {
             this.moving(updatedPlayer);
             }, 500);  
         } else if (currentX === 475 && currentY === 100){
+          return( 
             this.gameOver(currentPlayer)
+          )
         } else if (currentX === 475 && currentY === 0) {
           currentY = currentY + 25;
           updatedPlayer.position = [currentX, currentY]
@@ -119,34 +122,35 @@ class Dice extends React.Component {
       let dice =  1 + Math.floor(Math.random() * 6)
       if (dice === 1){
           console.log(dice)
-          this.setState({url: dice1, counter: this.state.counter})
+          this.setState({url: dice1, counter: this.state.counter, turns: this.state.turns})
       } else if (dice === 2){
         console.log(dice)
-        this.setState({url: dice2, counter: this.state.counter})
+        this.setState({url: dice2, counter: this.state.counter, turns: this.state.turns})
       } else if (dice === 3){
         console.log(dice)
-        this.setState({url: dice3, counter: this.state.counter})
+        this.setState({url: dice3, counter: this.state.counter, turns: this.state.turns})
       } else if (dice === 4){
         console.log(dice)
-        this.setState({url: dice4, counter: this.state.counter})
+        this.setState({url: dice4, counter: this.state.counter, turns: this.state.turns})
       } else if (dice === 5){
         console.log(dice)
-        this.setState({url: dice5, counter: this.state.counter})
+        this.setState({url: dice5, counter: this.state.counter, turns: this.state.turns})
       } else if (dice === 6){
         console.log(dice)
-        this.setState({url: dice6, counter: this.state.counter})
+        this.setState({url: dice6, counter: this.state.counter, turns: this.state.turns})
       }
       let counter = this.state.counter
-
+      let turns = this.state.turns
       if (counter < 3){
         counter ++
       } else {
         counter = 0
+        turns ++
       }
-      
-    this.setState({counter: counter}) 
+    this.setState({counter: counter, turns: turns}) 
     this.updatePositionOfCurrent(this.props.currentPlayer, dice)
     this.updateCurrentPlayer(counter)
+    this.addTurn(turns)
     }
 
     render (){

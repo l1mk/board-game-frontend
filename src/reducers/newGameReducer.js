@@ -33,6 +33,12 @@ const newGameReducer = (state = { selectedPlayers: [{player1: {name: "AI1"}, pla
               ...state, 
               playerOrder: newPlayers
             }
+          case 'UPDATE_TURNS':
+            console.log('update turns', action, state)
+            return {
+              ...state, 
+              turns: action.payload
+            }
 
       default:
         return state;

@@ -13,6 +13,8 @@ function Characters(props) {
                 right: '16px',
                 top: '80px'
         }}>
+            <h5>TURNS: {props.turns}</h5>
+
             <h5>PLAYERS</h5>
            { props.playerOrder.map((player, index) => 
                                <div key = {index}>
