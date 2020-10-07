@@ -47,6 +47,25 @@ class Dice extends React.Component {
       console.log('turns:', turns)
       this.props.updateTurns(turns)
     }
+    
+    win = (currentPlayer) => {
+      let realPlayer = {};
+      console.log('real player and current player', realPlayer, currentPlayer)
+      if (this.props.players.length > 0){
+        console.log('players is more than 0', this.props.players.length > 0)
+          this.props.players.map(player => {
+            console.log('inside map of players', player)
+            if (player.name === this.props.capitalize(currentPlayer.name)){
+              console.log('names are equal', player.name === this.props.capitalize(currentPlayer.name))
+              realPlayer = player
+              realPlayer.wins = (realPlayer.wins + 1)
+              console.log('real player and wins', realPlayer, realPlayer.wins)
+              this.props.winUpdate(realPlayer)
+            }
+            
+            })
+      }
+    }
 
     gameOver = (currentPlayer) => {
       console.log('GAME OVER')
@@ -54,6 +73,7 @@ class Dice extends React.Component {
       alert (`game over, player ${currentPlayer.name} Won`)
       let game = {turns: this.props.turns, player1: this.props.playerOrder[0].name, pokemon1: this.props.playerOrder[0].character.pokemon, player2: this.props.playerOrder[1].name, pokemon2: this.props.playerOrder[1].character.pokemon, player3: this.props.playerOrder[2].name, pokemon3: this.props.playerOrder[2].character.pokemon, player4: this.props.playerOrder[3].name, pokemon4: this.props.playerOrder[3].character.pokemon }
       this.props.addGame(game)
+      this.win(currentPlayer)
     }
 
     moving = (updatedPlayer) => {
@@ -182,12 +202,14 @@ class Dice extends React.Component {
     }
 
     render (){
-        console.log('dice component', this.state, 'with props', this.props);
+        console.log('dice component', this.state, 'with props', this.props, 'real players', this.props.players );
         return (
             <div>
-              <h4>Current Turn is for: {this.props.currentPlayer.name}</h4>
+              <h4>Current Turn is for: {this.props.capitalize(this.props.currentPlayer.name)}</h4>
                 {this.startButton()}
                 {this.resetButton()}
+                <button onClick={ () => this.gameOver(this.props.currentPlayer)}>END</button>
+              
                 <div
                     style = {{
                         position: 'absolute',

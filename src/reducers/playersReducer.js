@@ -29,8 +29,8 @@ const playersReducer = (state = { players: [], loadingPlayer: false}, action) =>
         case 'UPDATE_PLAYER':
           console.log('updating player', action, state)
           let updatedPlayer = state.players.map(player => {
-            if (player.id === action.player.id) {
-              return action.player
+            if (player.id === action.payload.id) {
+              return action.payload
             } else {
               return player
             }
