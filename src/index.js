@@ -7,6 +7,7 @@ import thunk from 'redux-thunk';
 import { BrowserRouter as Router} from 'react-router-dom'
 import rootReducer from './reducers/rootReducer';
 
+
 //setup the chrome xtension tool 
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //store setup
