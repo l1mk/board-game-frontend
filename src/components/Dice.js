@@ -33,10 +33,10 @@ class Dice extends React.Component {
 
     reset = () =>{
       this.setState({url : {dice1}, counter: 0, turns: 0, gameOver: false}) 
-      let player1 = {order: this.props.playerOrder[0].order, name: this.props.playerOrder[0].name, position: [-25,0], character: this.props.playerOrder[0].character, url: this.props.playerOrder[0].url}
-      let player2 = {order: this.props.playerOrder[1].order, name: this.props.playerOrder[1].name, position: [-25,0], character: this.props.playerOrder[1].character, url: this.props.playerOrder[1].url}
-      let player3 = {order: this.props.playerOrder[2].order, name: this.props.playerOrder[2].name, position: [-25,0], character: this.props.playerOrder[2].character, url: this.props.playerOrder[2].url}
-      let player4 = {order: this.props.playerOrder[3].order, name: this.props.playerOrder[3].name, position: [-25,0], character: this.props.playerOrder[3].character, url: this.props.playerOrder[3].url}
+      let player1 = {order: this.props.playerOrder[0].order, name: this.props.playerOrder[0].name, position: [-40,0], character: this.props.playerOrder[0].character, url: this.props.playerOrder[0].url}
+      let player2 = {order: this.props.playerOrder[1].order, name: this.props.playerOrder[1].name, position: [-40,0], character: this.props.playerOrder[1].character, url: this.props.playerOrder[1].url}
+      let player3 = {order: this.props.playerOrder[2].order, name: this.props.playerOrder[2].name, position: [-40,0], character: this.props.playerOrder[2].character, url: this.props.playerOrder[2].url}
+      let player4 = {order: this.props.playerOrder[3].order, name: this.props.playerOrder[3].name, position: [-40,0], character: this.props.playerOrder[3].character, url: this.props.playerOrder[3].url}
       let players = [player1, player2, player3, player4]
       this.props.updatePlayersOrder(players)
       this.props.updateCurrentPlayer(players[0])
@@ -68,72 +68,72 @@ class Dice extends React.Component {
       let updatedPlayer = currentPlayer;
       for (let i= 0; i < dice ; i++){
         console.log('inside loop', i)
-        if (currentX < 475 && currentY === 0 ){
-          (console.log('increase of 25 for x', updatedPlayer.position))
-          currentX = currentX + 25;
+        if (currentX < 760 && currentY === 0 ){
+          (console.log('increase of 40 for x', updatedPlayer.position))
+          currentX = currentX + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);
-        } else if (currentX <= 475 && currentX > 0 && currentY === 25){
-          (console.log('decrease of 25 for x', updatedPlayer.position))
-          currentX = currentX - 25;
+            }, 800);
+        } else if (currentX <= 760 && currentX > 0 && currentY === 40){
+          (console.log('decrease of 40 for x', updatedPlayer.position))
+          currentX = currentX - 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);
-        } else if (currentX === 0 && currentY === 25){
-          (console.log('increase of 25 for y', updatedPlayer.position))
-          currentY = currentY + 25;
+            }, 800);
+        } else if (currentX === 0 && currentY === 40){
+          (console.log('increase of 40 for y', updatedPlayer.position))
+          currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);
-        } else if (currentX >= 0 && currentX < 475 && currentY === 50){
-          (console.log('increase of 25 for x', updatedPlayer.position))
-          currentX = currentX + 25;
+            }, 800);
+        } else if (currentX >= 0 && currentX < 760 && currentY === 80){
+          (console.log('increase of 40 for x', updatedPlayer.position))
+          currentX = currentX + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);    
-        } else if (currentX === 475 && currentY === 50){
-          (console.log('increase of 25 for y', updatedPlayer.position))
-          currentY = currentY + 25;
+            }, 800);    
+        } else if (currentX === 760 && currentY === 80){
+          (console.log('increase of 40 for y', updatedPlayer.position))
+          currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);  
-        } else if (currentX <= 475 && currentX >0 && currentY === 75){
-          (console.log('decrease of 25 for x', updatedPlayer.position))
-          currentX = currentX - 25;
+            }, 800);  
+        } else if (currentX <= 760 && currentX >0 && currentY === 120){
+          (console.log('decrease of 40 for x', updatedPlayer.position))
+          currentX = currentX - 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500); 
-        } else if (currentX === 0 && currentY === 75){
-          (console.log('increase of 25 for y', updatedPlayer.position))
-          currentY = currentY + 25;
+            }, 800); 
+        } else if (currentX === 0 && currentY === 120){
+          (console.log('increase of 40 for y', updatedPlayer.position))
+          currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);           
-        } else if (currentX >= 0 && currentX < 475 && currentY === 100){
-          (console.log('increase of 25 for x', updatedPlayer.position))
-          currentX = currentX + 25;
+            }, 800);           
+        } else if (currentX >= 0 && currentX < 760 && currentY === 160){
+          (console.log('increase of 40 for x', updatedPlayer.position))
+          currentX = currentX + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);  
-        } else if (currentX === 475 && currentY === 100){
+            }, 800);  
+        } else if (currentX === 760 && currentY === 160){
           return( 
             this.gameOver(currentPlayer)
           )
-        } else if (currentX === 475 && currentY === 0) {
-          currentY = currentY + 25;
+        } else if (currentX === 760 && currentY === 0) {
+          currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
-            }, 500);
+            }, 800);
         
         }
     }

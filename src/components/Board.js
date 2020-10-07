@@ -8,9 +8,9 @@ function Board() {
     const tiles = []
     let id = 0
 
-    for (let y=0; y < 500; y = y + 25){
+    for (let y=0; y < 200; y = y + 40){
         const row = []
-        for (let x=0; x < 500; x = x + 25){
+        for (let x=0; x < 800; x = x + 40){
             row.push({ x, y, id: id++})
         }
         tiles.push(row)
@@ -29,8 +29,8 @@ function Board() {
                     <div key = {x}
                         style ={{
                             border: '1px solid white',
-                            height: 23,
-                            width: 23
+                            height: 38,
+                            width: 38
                         }}
                     />
                 ))}

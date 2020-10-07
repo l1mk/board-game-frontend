@@ -12,8 +12,8 @@ class BoardContainer extends React.Component {
           <h1>Board Container</h1>
           <div style= {{
           position: 'relative',
-          height: '500px',
-          width: '500px',
+          height: '200px',
+          width: '800px',
           backgroundColor: 'grey',
           border: '1px solid black',
           margin: '20px auto'
@@ -24,7 +24,7 @@ class BoardContainer extends React.Component {
                 < Player position = {player.position} url = {player.url}/>
             </div>
             )}
-          < Player position = {[-25, 0]} url = {pokeball} />
+          < Player position = {[-40, 0]} url = {pokeball} />
           </div>
       </div>
     );

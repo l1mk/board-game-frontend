@@ -27,10 +27,10 @@ class OrderSelection extends React.Component {
             }
         this.setState({ rolls: [roll1, roll2, roll3, roll4] }) 
    
-        let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, position: [-25,0], character: this.props.characters[0], url: pikachu}
-        let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, position: [-25,0], character: this.props.characters[1], url: eevee}  
-        let player3 = {order: roll3, name: this.props.selectedPlayers[0].player3.name, position: [-25,0], character: this.props.characters[2], url: jigglypuff}
-        let player4 = {order: roll4, name: this.props.selectedPlayers[0].player4.name, position: [-25,0], character: this.props.characters[3], url: togepi}
+        let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, position: [-40,0], character: this.props.characters[0], url: pikachu}
+        let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, position: [-40,0], character: this.props.characters[1], url: eevee}  
+        let player3 = {order: roll3, name: this.props.selectedPlayers[0].player3.name, position: [-40,0], character: this.props.characters[2], url: jigglypuff}
+        let player4 = {order: roll4, name: this.props.selectedPlayers[0].player4.name, position: [-40,0], character: this.props.characters[3], url: togepi}
         
         this.orderPlayers(player1, player2, player3, player4 )
     }

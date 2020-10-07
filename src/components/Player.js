@@ -10,13 +10,13 @@ class Player extends React.Component {
         <div 
          style = {{
              position: 'absolute',
-             objectFit: 'cover',
+             objectFit: 'fit',
              top: this.props.position[1],
              left: this.props.position[0],
              backgroundImage: `url(${this.props.url})`,
              backgroundPosition: '0 0',
-             width: '23px',
-             height: '23px'
+             width: '38px',
+             height: '38px'
          }}
         >
         </div>
