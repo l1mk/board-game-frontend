@@ -70,10 +70,10 @@ class Dice extends React.Component {
     gameOver = (currentPlayer) => {
       console.log('GAME OVER')
       this.setState({gameOver: true}) 
+      this.win(currentPlayer)
       alert (`game over, player ${currentPlayer.name} Won`)
       let game = {turns: this.props.turns, player1: this.props.playerOrder[0].name, pokemon1: this.props.playerOrder[0].character.pokemon, player2: this.props.playerOrder[1].name, pokemon2: this.props.playerOrder[1].character.pokemon, player3: this.props.playerOrder[2].name, pokemon3: this.props.playerOrder[2].character.pokemon, player4: this.props.playerOrder[3].name, pokemon4: this.props.playerOrder[3].character.pokemon }
       this.props.addGame(game)
-      this.win(currentPlayer)
     }
 
     moving = (updatedPlayer) => {

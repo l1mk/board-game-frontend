@@ -2,7 +2,7 @@ export const fetchUpdatePlayer = (player) =>{
     //action to update player wins
     console.log("fetching update on player", player)
     return (dispatch) => {
-        fetch(`http://localhost:3000/players/${player.id}`, {
+        fetch (`http://localhost:3000/players/${player.id}`, {
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
