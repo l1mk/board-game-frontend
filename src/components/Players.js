@@ -1,9 +1,9 @@
 import React from 'react';
 
-//players component to render all players on the game inside the records page
+//players component to render all players created on the game inside the records page
 function Players(props) {
 
-    console.log('players component', props);
+    //console.log('players component', props);
 
     return (
         <div>

@@ -9,16 +9,13 @@ import NewGameContainer from './containers/NewGameContainer';
 import PlayerSelectionContainer from './containers/PlayerSelectionContainer';
 import GameContainer from './containers/GameContainer';
 
-
+//Main app component that setup all pages routes
 class App extends React.Component {
 
-
-
   render(){
-    console.log('app render console')
+    //console.log('app render console')
     return (
       <div className="App">
-        <h1>App</h1>
         <button onClick={()=> window.location.href='http://localhost:3001/newgame'}>Start Game</button>
         <NavContainer />
         <Switch>

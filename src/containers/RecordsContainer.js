@@ -7,22 +7,23 @@ import { fetchDeleteGame } from '../actions/fetchDeleteGame';
 import PlayersContainer from './PlayersContainer';
 import GamesContainer from './GamesContainer';
 
-
+//records page container with all functions to be pass for players and games list
 class RecordsContainer extends React.Component {
 
   componentDidMount(){
-    console.log('component didmount for Records console', this.props)
+    //console.log('component didmount for Records console', this.props)
     this.props.fetchAllPlayers()
     this.props.fetchAllGames()
   }
 
   capitalize = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
+    if (str){
+      return str.charAt(0).toUpperCase() + str.slice(1);
     }
-
+  }
 
   render(){
-    console.log('records container render console', this.props)
+    //console.log('records container render console', this.props)
     return (
       <div>
         <PlayersContainer players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} capitalize = {this.capitalize} />

@@ -5,13 +5,13 @@ import eevee from '../images/eevee.png';
 import togepi from '../images/togepi.png';
 import pikachu from '../images/pikachu.png';
 
-//order selection after rolling the dice
+//order selection after rolling the dice and image import for each pkm
 class OrderSelection extends React.Component {
 
         state = {rolls : []}
 
      rollDices = () => {
-        console.log("rolling dice")
+        //console.log("rolling dice")
         let roll1 = 1 + Math.floor(Math.random() * 6)
         let roll2 = 1 + Math.floor(Math.random() * 6)
             if (roll1 === roll2) {
@@ -36,16 +36,16 @@ class OrderSelection extends React.Component {
     }
 
     orderPlayers = (player1, player2, player3, player4 ) => {
-        console.log("sorting players function",this.props) 
+        //console.log("sorting players function",this.props) 
         let playerOrder = [player1, player2, player3, player4]
         let playerOrdered = playerOrder.sort((a, b)=> (a.order > b.order) ? 1 : -1)
         this.props.updatePlayersOrder(playerOrdered)
-        console.log('updating current player to', playerOrdered[0])
+        //console.log('updating current player to', playerOrdered[0])
         this.props.updateCurrentPlayer(playerOrdered[0])
     }
 
     render(){
-        console.log('order selection component', this.props, this.state, pikachu)
+        //console.log('order selection component', this.props, this.state, pikachu)
         return (
             <div>
                 <button onClick= {()=>this.rollDices()} >Roll Dices</button><br></br>

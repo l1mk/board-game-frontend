@@ -1,11 +1,11 @@
 import React from 'react';
 
 
-//Player rendering and game start
+//Player rendering on game start
 class Player extends React.Component {
     
     render(){
-{console.log('player rendering component', this.props)}
+//{console.log('player rendering component', this.props)}
       return (
         <div 
          style = {{

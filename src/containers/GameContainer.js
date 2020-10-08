@@ -5,20 +5,19 @@ import { connect } from 'react-redux';
 import { fetchAddGame } from '../actions/fetchAddGame';
 import { fetchUpdatePlayer } from '../actions/fetchUpdatePlayer';
 
+//first container for the start of an ongoing game
 class Game extends React.Component {
 
   render(){
-    console.log('Game start container render console', this.props)
+    //console.log('Game start container render console', this.props)
     return (
       <div>
-          <h1>Game Container</h1>
          <BoardContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
          <UIContainer players = {this.props.players} playerOrder = {this.props.playerOrder} updatePlayersOrder={this.props.updatePlayersOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} updateTurns = {this.props.updateTurns} winUpdate = {this.props.winUpdate}  />
       </div>
     );
   }
 }
-
  
 const mapStateToProps = (store) => {
     return {

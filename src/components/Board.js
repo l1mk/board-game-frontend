@@ -3,7 +3,7 @@ import React from 'react';
 //Board rendering and game start
 function Board() {
 
-  console.log('board render console');
+  //console.log('board render console');
 
     const tiles = []
     let id = 0
@@ -15,7 +15,7 @@ function Board() {
         }
         tiles.push(row)
     }
-    console.dir(tiles)
+    //console.dir(tiles)
 
   return (
     <div 

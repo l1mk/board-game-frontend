@@ -3,13 +3,13 @@ import Board from '../components/Board';
 import Player from '../components/Player';
 import pokeball from '../images/pokeball.jpg';
 
+//board container with the styles that are pased to the board and the players, props are coming from game container
 class BoardContainer extends React.Component {
 
   render(){
-    console.log('Board container render console', this.props)
+    //console.log('Board container render console', this.props)
     return (
       <div>
-          <h1>Board Container</h1>
           <div style= {{
           position: 'relative',
           height: '200px',

@@ -6,17 +6,16 @@ import Pokedex from '../components/Pokedex';
 class PokedexContainer extends React.Component {
 //fetch all characters after mounting component
   componentDidMount(){
-    console.log('component didmount for characters console', this.props)
+    //console.log('component didmount for characters console', this.props)
     this.props.fetchAllCharacters()
 
   }
 
-//render character component
+//render character component that include all pkms from api
   render(){
-    console.log('Pokedex container render console', this.props.characters)
+    //console.log('Pokedex container render console', this.props.characters)
     return (
       <div>
-        <h1>Characters Container</h1>
         <Pokedex characters = {this.props.characters}/>
       </div>
     );

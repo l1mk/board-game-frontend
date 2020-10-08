@@ -3,7 +3,7 @@ import React from 'react';
 //Characters list inside the UI
 function Characters(props) {
 
-    console.log('characters UI component', props);
+    //console.log('characters UI component', props);
 
     return (
         <div 

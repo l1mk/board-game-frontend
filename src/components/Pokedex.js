@@ -3,7 +3,7 @@ import React from 'react';
 //character list and description for pokedex page
 function Pokedex(props) {
 
-    console.log('pokedex component', props);
+    //console.log('pokedex component', props);
 
     return (
         <div>

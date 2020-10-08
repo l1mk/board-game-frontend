@@ -14,15 +14,11 @@ class NewGame extends React.Component {
     }
 
     changeHandler = (e) => {
-        console.log("player name", {[e.target.name]: {name: e.target.value}} )
+        //console.log("player name", {[e.target.name]: {name: e.target.value}} )
         let player = {[e.target.name]: {name: e.target.value}}
         let state = this.state.playerSelected[0]
         let updatedPlayer = Object.assign(state, player)
-        console.log("player", player)
-        console.log("state ", state)
-        console.log("updated players", updatedPlayer)
         this.setState({ playerSelected: [...this.state.playerSelected, {updatedPlayer}]})
-        console.log("updated state", this.state.playerSelected[0])
     }
 
     submitHandler = (e) => {
@@ -39,7 +35,7 @@ class NewGame extends React.Component {
     }
 
   render(){
-    console.log('new game player selection render console')
+    //console.log('new game player selection render console')
     return (
       <div>
           <form onSubmit={this.submitHandler}>

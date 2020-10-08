@@ -3,7 +3,7 @@ import React from 'react';
 //game list for records page
 function Games(props) {
 
-    console.log('games component', props);
+    //console.log('games component', props);
 
     return (
         <div>

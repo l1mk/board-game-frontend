@@ -11,7 +11,7 @@ class PlayerSelection extends React.Component {
     }
 
     submitHandler = (e, a) => {
-        console.log('submit new player', a)
+        //console.log('submit new player', a)
         e.preventDefault()
         if (a === "player1"){
             let updatedPlayer = {player1: {name: this.state.player1.name}}
@@ -20,7 +20,7 @@ class PlayerSelection extends React.Component {
                 ...this.state, player1: {name: ""}
              })
              this.props.updateselectedPlayers(updatedPlayer)
-             alert ('player1 created')
+             //alert ('player1 created')
         }
         else if (a === "player2"){
             let updatedPlayer = {player2: {name: this.state.player2.name}}
@@ -29,7 +29,7 @@ class PlayerSelection extends React.Component {
                 ...this.state, player2: {name: ""}
              })
              this.props.updateselectedPlayers(updatedPlayer)
-             alert ('player2 created')
+             //alert ('player2 created')
         }
         else if (a === "player3"){
             let updatedPlayer = {player3: {name: this.state.player3.name}}
@@ -38,7 +38,7 @@ class PlayerSelection extends React.Component {
                 ...this.state, player3: {name: ""}
              })
              this.props.updateselectedPlayers(updatedPlayer)
-             alert ('player3 created')
+             //alert ('player3 created')
         }
         else if (a === "player4"){
             let updatedPlayer = {player4: {name: this.state.player4.name}}
@@ -47,13 +47,13 @@ class PlayerSelection extends React.Component {
                 ...this.state, player4: {name: ""}
              })
              this.props.updateselectedPlayers(updatedPlayer)
-             alert ('player4 created')
+             //alert ('player4 created')
         }
     } 
 
 
     Player1 (props = this.props.selectedPlayers[0]) {
-        if (props.player1.name === "player1"){
+        if (props.player1.name === "player1" || props.player1.name === ""){
             return (
             <div key = "1">
                     <form onSubmit={(e, a = "player1")=> this.submitHandler(e, a)}>
@@ -72,7 +72,7 @@ class PlayerSelection extends React.Component {
     }
 
     Player2 (props = this.props.selectedPlayers[0]){
-        if (props.player2.name === "player2"){
+        if (props.player2.name === "player2" || props.player2.name === ""){
             return (
                 <div key = "2">
                         <form onSubmit={(e, a = "player2")=> this.submitHandler(e, a)}>
@@ -91,7 +91,7 @@ class PlayerSelection extends React.Component {
     }
 
     Player3 (props = this.props.selectedPlayers[0]){
-        if (props.player3.name === "player3"){
+        if (props.player3.name === "player3" || props.player3.name === ""){
             return (
                 <div key = "3">
                         <form onSubmit={(e, a = "player3")=> this.submitHandler(e, a)}>
@@ -110,7 +110,7 @@ class PlayerSelection extends React.Component {
     }
 
     Player4 (props = this.props.selectedPlayers[0]){
-        if (props.player4.name === "player4"){
+        if (props.player4.name === "player4" || props.player4.name === ""){
             return (
                 <div key = "4">
                         <form onSubmit={(e, a = "player4")=> this.submitHandler(e, a)}>
@@ -130,7 +130,7 @@ class PlayerSelection extends React.Component {
     }
 
     render(){
-        console.log('selection component', this.props)
+        //console.log('selection component', this.props)
         return (
             <div>
                 {this.Player1()}

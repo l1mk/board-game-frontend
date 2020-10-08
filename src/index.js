@@ -12,7 +12,7 @@ import rootReducer from './reducers/rootReducer';
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 //store setup
 const store = createStore(rootReducer, composeEnhancers(applyMiddleware(thunk)))
-console.log('created store', store.getState())
+//console.log('created store', store.getState())
 //redering the and passing router and store
 ReactDOM.render(
     <Provider store={store}>

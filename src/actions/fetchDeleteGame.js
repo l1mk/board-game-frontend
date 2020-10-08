@@ -1,6 +1,5 @@
 export const fetchDeleteGame = (id) => {
     //action to delete game
-    console.log('fetching delete', id)
     return (dispatch) => {
         fetch (`http://localhost:3000/games/${id}`, {
             method:'DELETE'

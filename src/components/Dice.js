@@ -10,7 +10,6 @@ import dice6 from '../images/dice6.png';
 class Dice extends React.Component {
 
     constructor(props){
-      console.log('dice constructor', props)
         super()
         this.state = {url : {dice1}, counter: 0, turns: 0, gameOver: false}
     }
@@ -44,19 +43,19 @@ class Dice extends React.Component {
     }
 
     addTurn = (turns) => {
-      console.log('turns:', turns)
+      //console.log('turns:', turns)
       this.props.updateTurns(turns)
     }
     
     win = (currentPlayer) => {
       let realPlayer = {};
-      console.log('real player and current player', realPlayer, currentPlayer)
+      //console.log('real player and current player', realPlayer, currentPlayer)
       if (this.props.players.length > 0){
-        console.log('players is more than 0', this.props.players.length > 0)
-          this.props.players.map(player => {
-            console.log('inside map of players', player)
+        //console.log('players is more than 0', this.props.players.length > 0)
+          this.props.players.forEach(player => {
+           // console.log('inside map of players', player)
             if (player.name === this.props.capitalize(currentPlayer.name)){
-              console.log('names are equal', player.name === this.props.capitalize(currentPlayer.name))
+              //console.log('names are equal', player.name === this.props.capitalize(currentPlayer.name))
               realPlayer = player
               realPlayer.wins = (realPlayer.wins + 1)
               console.log('real player and wins', realPlayer, realPlayer.wins)
@@ -68,7 +67,7 @@ class Dice extends React.Component {
     }
 
     gameOver = (currentPlayer) => {
-      console.log('GAME OVER')
+      //console.log('GAME OVER')
       this.setState({gameOver: true}) 
       this.win(currentPlayer)
       alert (`game over, player ${currentPlayer.name} Won`)
@@ -77,68 +76,68 @@ class Dice extends React.Component {
     }
 
     moving = (updatedPlayer) => {
-      console.log('player moving')
+      //console.log('player moving')
       this.props.updatePlayer(updatedPlayer)
     }
 
     updatePositionOfCurrent = (currentPlayer, dice) => {
-      console.log('update position for', currentPlayer, dice)
+      //console.log('update position for', currentPlayer, dice)
       let currentX = currentPlayer.position[0];
       let currentY = currentPlayer.position[1];
       let updatedPlayer = currentPlayer;
       for (let i= 0; i < dice ; i++){
-        console.log('inside loop', i)
+        //console.log('inside loop', i)
         if (currentX < 760 && currentY === 0 ){
-          (console.log('increase of 40 for x', updatedPlayer.position))
+          //(console.log('increase of 40 for x', updatedPlayer.position))
           currentX = currentX + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800);
         } else if (currentX <= 760 && currentX > 0 && currentY === 40){
-          (console.log('decrease of 40 for x', updatedPlayer.position))
+          //(console.log('decrease of 40 for x', updatedPlayer.position))
           currentX = currentX - 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800);
         } else if (currentX === 0 && currentY === 40){
-          (console.log('increase of 40 for y', updatedPlayer.position))
+          //(console.log('increase of 40 for y', updatedPlayer.position))
           currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800);
         } else if (currentX >= 0 && currentX < 760 && currentY === 80){
-          (console.log('increase of 40 for x', updatedPlayer.position))
+          //(console.log('increase of 40 for x', updatedPlayer.position))
           currentX = currentX + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800);    
         } else if (currentX === 760 && currentY === 80){
-          (console.log('increase of 40 for y', updatedPlayer.position))
+          //(console.log('increase of 40 for y', updatedPlayer.position))
           currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800);  
         } else if (currentX <= 760 && currentX >0 && currentY === 120){
-          (console.log('decrease of 40 for x', updatedPlayer.position))
+          //(console.log('decrease of 40 for x', updatedPlayer.position))
           currentX = currentX - 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800); 
         } else if (currentX === 0 && currentY === 120){
-          (console.log('increase of 40 for y', updatedPlayer.position))
+          //(console.log('increase of 40 for y', updatedPlayer.position))
           currentY = currentY + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
             this.moving(updatedPlayer);
             }, 800);           
         } else if (currentX >= 0 && currentX < 760 && currentY === 160){
-          (console.log('increase of 40 for x', updatedPlayer.position))
+          //(console.log('increase of 40 for x', updatedPlayer.position))
           currentX = currentX + 40;
           updatedPlayer.position = [currentX, currentY]
           setTimeout(() => {
@@ -160,7 +159,7 @@ class Dice extends React.Component {
   }
 
     updateCurrentPlayer = (counter) => {
-      console.log('update current player to', this.props.playerOrder[counter])
+      //console.log('update current player to', this.props.playerOrder[counter])
       this.props.updateCurrentPlayer(this.props.playerOrder[counter])
     }
 
@@ -169,22 +168,22 @@ class Dice extends React.Component {
       
       let dice =  1 + Math.floor(Math.random() * 6)
       if (dice === 1){
-          console.log(dice)
+          //console.log(dice)
           this.setState({url: dice1, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       } else if (dice === 2){
-        console.log(dice)
+        //console.log(dice)
         this.setState({url: dice2, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       } else if (dice === 3){
-        console.log(dice)
+        //console.log(dice)
         this.setState({url: dice3, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       } else if (dice === 4){
-        console.log(dice)
+        //console.log(dice)
         this.setState({url: dice4, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       } else if (dice === 5){
-        console.log(dice)
+        //console.log(dice)
         this.setState({url: dice5, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       } else if (dice === 6){
-        console.log(dice)
+        //console.log(dice)
         this.setState({url: dice6, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       }
       let counter = this.state.counter
@@ -208,8 +207,6 @@ class Dice extends React.Component {
               <h4>Current Turn is for: {this.props.capitalize(this.props.currentPlayer.name)}</h4>
                 {this.startButton()}
                 {this.resetButton()}
-                <button onClick={ () => this.gameOver(this.props.currentPlayer)}>END</button>
-              
                 <div
                     style = {{
                         position: 'absolute',

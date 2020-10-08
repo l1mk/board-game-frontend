@@ -1,27 +1,28 @@
+//real player list reducers including fetching from api
 const playersReducer = (state = { players: [], loadingPlayer: false}, action) => {
     switch(action.type) {
       case 'LOADING_PLAYERS':
-        console.log('loading player', action, state)
+        //console.log('loading player', action, state)
         return {
           ...state,
           players: [...state.players],
           loadingPlayer: true
         }
       case 'ADD_PLAYERS':
-        console.log('all players', action, state)
+        //console.log('all players', action, state)
         return {
           ...state,
           players: action.players,
           loadingPlayer: false
         }
       case 'ADD_PLAYER':
-        console.log('adding new player', action, state)
+        //console.log('adding new player', action, state)
         return {
           ...state,
           players : [...state.players, action.player]
         }
         case 'DELETE_PLAYER':
-          console.log('deleting player', action, state)
+          //console.log('deleting player', action, state)
           return {
             ...state,
             players : action.players
@@ -38,8 +39,6 @@ const playersReducer = (state = { players: [], loadingPlayer: false}, action) =>
           return {
             ...state,
              players: [...state.players, updatedPlayer]}
-
-
       default:
         return state;
     }
