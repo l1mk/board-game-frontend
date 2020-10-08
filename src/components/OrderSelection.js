@@ -8,8 +8,16 @@ import pikachu from '../images/pikachu.png';
 //order selection after rolling the dice and image import for each pkm
 class OrderSelection extends React.Component {
 
-        state = {rolls : []}
+        state = {rolls : [], ready: false}
 
+    gameStart = () => {
+        if (this.state.ready === true){
+            return (
+                <NavLink to="/game"> Start Game!</NavLink>
+            )
+        }
+    }
+    
      rollDices = () => {
         //console.log("rolling dice")
         let roll1 = 1 + Math.floor(Math.random() * 6)
@@ -25,7 +33,7 @@ class OrderSelection extends React.Component {
             if (roll4 === roll3 || roll4 === roll2 || roll4 === roll1) {
                 roll4 = 1 + Math.floor(Math.random() * 6)    
             }
-        this.setState({ rolls: [roll1, roll2, roll3, roll4] }) 
+        this.setState({ rolls: [roll1, roll2, roll3, roll4], ready: true }) 
    
         let player1 = {order: roll1, name: this.props.selectedPlayers[0].player1.name, position: [-40,0], character: this.props.characters[0], url: pikachu, wins: 0, loses: 0}
         let player2 = {order: roll2, name: this.props.selectedPlayers[0].player2.name, position: [-40,0], character: this.props.characters[1], url: eevee,  wins: 0, loses: 0}  
@@ -55,7 +63,7 @@ class OrderSelection extends React.Component {
                     <li>Player3: {this.state.rolls[2]}<br></br></li> 
                     <li>Player4: {this.state.rolls[3]}<br></br></li> 
                </div>
-               <NavLink to="/game"> Start Game!</NavLink>
+               {this.gameStart()}
             </div>
         )
     }
