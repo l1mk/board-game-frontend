@@ -98,3 +98,24 @@ class PlayerInput extends React.Component {
 
 export default connect(null, {fetchAddPlayer}) (PlayerInput)
 ----
+
+     <button onClick={ () => this.gameOver(this.props.currentPlayer)}>END</button>
+
+----
+
+export const fetchUpdatePlayer = (player) =>{
+    //action to update player wins
+    console.log("fetching update on player", player)
+    return (dispatch) => {
+        fetch (`http://localhost:3000/players/${player.id}`, {
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            }, 
+            method: 'PATCH',
+            body: JSON.stringify(player)
+        })
+        .then(response => response.json())
+        .then(player => dispatch({type: 'UPDATE_PLAYER', payload: player}))
+    }
+}

@@ -1,0 +1,61 @@
+#homescreen {
+    width: 600px;
+    height: 338px;
+    margin-left: 10px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@font-face {
+    font-family: pkm_font;
+    src: url(./assets/pkm_font.ttf);
+}
+
+.main {
+    font-family: pkm_font;
+}
+
+.nav {
+    position: absolute;
+    margin-right: 20px;
+    right: 30px;
+    font-style: normal;
+    font-size: 10px;
+    font-family: pkm_font;
+    font-weight: bold;
+    text-align: right;
+}
+
+.nav ul { 
+    list-style-image: none;
+}
+
+.nav li {
+    list-style-type: none;
+}
+
+.nav li:hover {
+    list-style-image: url('./images/selector.png');
+    
+}
+
+/* unvisited link */
+a:link {
+    color: black;
+  }
+  
+  /* visited link */
+  a:visited {
+    color: grey;
+  }
+  
+  /* mouse over link */
+  a:hover {
+    color: lightgray;
+  }
+  
+  /* selected link */
+  a:active {
+    color: darkgray;
+  }

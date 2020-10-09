@@ -59,7 +59,7 @@ class Dice extends React.Component {
               realPlayer = player
               realPlayer.wins = (realPlayer.wins + 1)
               console.log('real player and wins', realPlayer, realPlayer.wins)
-              this.props.winUpdate(realPlayer)
+              this.props.fetchUpdatePlayer(realPlayer)
             }
             
             })
@@ -201,7 +201,7 @@ class Dice extends React.Component {
     }
 
     render (){
-        console.log('dice component', this.state, 'with props', this.props, 'real players', this.props.players );
+        //console.log('dice component', this.state, 'with props', this.props, 'real players', this.props.players );
         return (
             <div>
               <h4>Current Turn is for: {this.props.capitalize(this.props.currentPlayer.name)}</h4>

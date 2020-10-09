@@ -16,7 +16,7 @@ class UIContainer extends React.Component {
     return (
       <div>
           <Characters playerOrder = {this.props.playerOrder} turns= {this.props.turns} capitalize = {this.capitalize}/>
-          <Dice  players = {this.props.players} playerOrder = {this.props.playerOrder} updatePlayersOrder={this.props.updatePlayersOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} updateTurns = {this.props.updateTurns} winUpdate = {this.props.winUpdate} capitalize = {this.capitalize}/>
+          <Dice  players = {this.props.players} playerOrder = {this.props.playerOrder} updatePlayersOrder={this.props.updatePlayersOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} updateTurns = {this.props.updateTurns} fetchUpdatePlayer = {this.props.fetchUpdatePlayer} capitalize = {this.capitalize}/>
       </div>
     );
   }

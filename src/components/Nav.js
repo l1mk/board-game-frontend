@@ -8,10 +8,10 @@ function Nav () {
 
     return (
       <div>
-      <NavLink to="/"> Home </NavLink> 
-      <NavLink to="/pokedex"> Pokedex </NavLink>
-      <NavLink to="/records"> Records </NavLink>
-      <NavLink to="/about"> About </NavLink>
+      <li><NavLink to="/home">   HOME   </NavLink></li>
+      <li><NavLink to="/pokedex">   POKEDEX   </NavLink></li>
+      <li><NavLink to="/records">   RECORDS   </NavLink></li>
+      <li><NavLink to="/about">   INFO   </NavLink></li>
       </div>
     );
   }

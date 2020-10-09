@@ -11,12 +11,18 @@ class PokedexContainer extends React.Component {
 
   }
 
+  capitalize = (str) => {
+    if (str){
+      return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+  } 
+
 //render character component that include all pkms from api
   render(){
     //console.log('Pokedex container render console', this.props.characters)
     return (
       <div>
-        <Pokedex characters = {this.props.characters}/>
+        <Pokedex characters = {this.props.characters} capitalize={this.capitalize}/>
       </div>
     );
   }

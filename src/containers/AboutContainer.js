@@ -7,7 +7,7 @@ class AboutContainer extends React.Component {
   render(){
     //console.log('game container render console')
     return (
-      <div>
+      <div className = "main">
           < About />
       </div>
     );

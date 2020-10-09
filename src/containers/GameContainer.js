@@ -13,7 +13,7 @@ class Game extends React.Component {
     return (
       <div>
          <BoardContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
-         <UIContainer players = {this.props.players} playerOrder = {this.props.playerOrder} updatePlayersOrder={this.props.updatePlayersOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} updateTurns = {this.props.updateTurns} winUpdate = {this.props.winUpdate}  />
+         <UIContainer players = {this.props.players} playerOrder = {this.props.playerOrder} updatePlayersOrder={this.props.updatePlayersOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} updateTurns = {this.props.updateTurns} fetchUpdatePlayer = {this.props.fetchUpdatePlayer}  />
       </div>
     );
   }
@@ -35,7 +35,7 @@ const mapStateToProps = (store) => {
     updatePlayersOrder: (players) => { dispatch({type: 'UPDATE_PLAYERS_ORDER', payload: players})},
     updateTurns: (turns) => { dispatch({type: 'UPDATE_TURNS', payload: turns})},
     addGame: (game) => dispatch(fetchAddGame(game)),
-    winUpdate: (player) => (fetchUpdatePlayer(player))
+    fetchUpdatePlayer: (player) => (fetchUpdatePlayer(player))
     }
   }
 
