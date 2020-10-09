@@ -8,6 +8,7 @@ import NewGameContainer from './containers/NewGameContainer';
 import PlayerSelectionContainer from './containers/PlayerSelectionContainer';
 import GameContainer from './containers/GameContainer';
 import HomeContainer from './containers/HomeContainer';
+import start from './images/start.png'
 
 
 //Main app component that setup all pages routes
@@ -17,7 +18,7 @@ class App extends React.Component {
     //console.log('app render console')
     return (
       <div className="App">
-        <button onClick={()=> window.location.href='http://localhost:3001/newgame'}>Start Game</button>
+        <button className="startBttn" onClick={()=> window.location.href='http://localhost:3001/newgame'}><img src={start} width={'100px'} height={'38px'} margin={'auto'} /></button>
         <NavContainer />
         <Switch>
         < Route path='/home' component={HomeContainer} />

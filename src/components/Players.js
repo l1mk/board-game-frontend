@@ -7,9 +7,9 @@ function Players(props) {
 
     return (
         <div>
-            <h5>Player Records </h5>
+            <h4>Player Records </h4>
             {props.players.map(player => <li key={player.id}>
-                               Name: {props.capitalize(player.name)} - Wins: {player.wins} - Loses: {player.loses} <button onClick={() => props.fetchDeletePlayer(player.id)}>Delete</button>
+                Name: {props.capitalize(player.name)} - Wins: {player.wins} - Loses: {player.loses}<span>. . . . . .</span> <button className="button" onClick={() => props.fetchDeletePlayer(player.id)}>X</button>
             </li>)}
         </div>
     );

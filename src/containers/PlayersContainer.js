@@ -7,7 +7,7 @@ class PlayersContainer extends React.Component {
   render(){
     //console.log('player container render console', this.props)
     return (
-      <div>
+      <div id="players">
       <Players players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} capitalize={this.props.capitalize}/>
       </div>
     );
