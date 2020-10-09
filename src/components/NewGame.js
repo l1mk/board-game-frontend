@@ -41,28 +41,38 @@ class NewGame extends React.Component {
           <form onSubmit={this.submitHandler}>
              <h3>Select Players:</h3>
             <label>- Player 1:</label> 
+            <div className ="dropdown">
              <select name="player1" onChange={this.changeHandler}>
                  <option value = "AI1">CPU</option>
                  <option value = "player1">Player</option>
              </select><br></br>
-             <label>- Player 2:</label> 
+             </div>
+             <label>- Player 2:</label>
+             <div className ="dropdown">
              <select name="player2" onChange={this.changeHandler}>
                  <option value = "AI2">CPU</option>
                  <option value = "player2">Player</option>
              </select><br></br>
+             </div>
              <label>- Player 3:</label> 
+             <div className ="dropdown">
              <select name="player3" onChange={this.changeHandler}>
                  <option value = "AI3">CPU</option>
                  <option value = "player3">Player</option>
              </select><br></br>
+             </div>
              <label>- Player 4:</label> 
+             <div className ="dropdown">
              <select name="player4" onChange={this.changeHandler}>
                  <option value = "AI4">CPU</option>
                  <option value = "player4">Player</option>
              </select><br></br>
-             <input type = "submit" value = "Submit"></input>
-          </form>
-          <NavLink to="/player-selection"> Continue to... </NavLink>
+             </div>
+             <input className="submitBttn" type = "submit" value = "Submit"></input>
+          </form><br></br>
+          <div className="link">
+          <li><NavLink to="/player-selection">NEXT</NavLink></li>
+          </div>
         <div>
         </div>
         

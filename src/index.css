@@ -19,6 +19,7 @@ h4 {
 }
 .main {
     font-family: pkm_font;
+    margin-left: 20px;
 }
 .nav {
     position: absolute;
@@ -39,21 +40,30 @@ h4 {
 .nav li:hover {
     list-style-image: url('./images/selector.png');
 }
-/* unvisited link */
+.link {
+    position: absolute;
+    margin-right: 20px;
+    right: 30px;
+    font-size: 16px;
+    font-family: pkm_font;
+    text-align: right;
+}
+.link li {
+    list-style-type: none;
+}
+.link li:hover {
+    list-style-image: url('./images/selector.png');
+}
+
 a:link {
     color: black;
   }
-  /* visited link */
   a:visited {
     color: grey;
   }
-
-  /* mouse over link */
   a:hover {
     color: lightgray;
   }
-  
-  /* selected link */
   a:active {
     color: darkgray;
   }
@@ -78,9 +88,60 @@ a:link {
     padding-left: 1px;
     padding-right: 2px;
     border-radius: 10px;
+    margin-left: 20px;
 }
 
 .App .startBttn:hover {
     border: black;
     background-color: darkgray;
+}
+.submitBttn {
+    font-family: pkm_font;
+    font-size: 12px;
+    align-items: center;
+    background-color: lightgrey;
+    border: lightgrey;
+    width: 80px;
+    height: 28px;
+    margin-top: 30px;
+    padding-left: 1px;
+    padding-right: 2px;
+    border-radius: 10px;
+    margin-left: 5px;
+}
+.submitBttn:hover{
+    border: black;
+    background-color: darkgray;
+}
+.text {
+    font-size: small;
+    margin-top: 50px;
+}
+.dropdown{
+    width: 500px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-left: 20px;
+    font-size: 13px;
+    padding: 10px 8px 10px 14px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+}
+.dropdown select{
+    background: transparent;
+    border: 0;
+    padding: 0;
+    border-radius: 0;
+    width: 120%;
+    z-index: 10;
+    font-family: pkm_font;
+    width: 100%;
+}
+.dropdown select:hover{
+    color: darkgray;
+}
+.dropdown select:focus{
+    outline: none !important;
+    color: lightgray;
 }
