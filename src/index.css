@@ -95,6 +95,13 @@ a:link {
     border: black;
     background-color: darkgray;
 }
+
+.App .startBttn:focus {
+    outline: none !important;
+    border: darkgray;
+    background-color: darkgray;
+}
+
 .submitBttn {
     font-family: pkm_font;
     font-size: 12px;
@@ -111,6 +118,11 @@ a:link {
 }
 .submitBttn:hover{
     border: black;
+    background-color: darkgray;
+}
+.submitBttn:focus {
+    outline: none !important;
+    border: darkgray;
     background-color: darkgray;
 }
 .text {

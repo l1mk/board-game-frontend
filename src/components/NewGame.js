@@ -10,7 +10,17 @@ class NewGame extends React.Component {
           player2: {name: "AI2"},
           player3: {name:"AI3"},
           player4: {name:"AI4"}},
-      ]
+      ],
+      ready: false
+    }
+    gameReady = () => {
+      if (this.state.ready === true){
+          return (
+            <div className="link">
+            <li><NavLink to="/player-selection">NEXT</NavLink></li>
+            </div>
+          )
+      }
     }
 
     changeHandler = (e) => {
@@ -30,7 +40,7 @@ class NewGame extends React.Component {
             player2: {name: "AI2"},
             player3: {name:"AI3"},
             player4: {name:"AI4"}},
-        ]
+        ] , ready: true
         })
     }
 
@@ -70,9 +80,7 @@ class NewGame extends React.Component {
              </div>
              <input className="submitBttn" type = "submit" value = "Submit"></input>
           </form><br></br>
-          <div className="link">
-          <li><NavLink to="/player-selection">NEXT</NavLink></li>
-          </div>
+          {this.gameReady()}
         <div>
         </div>
         
