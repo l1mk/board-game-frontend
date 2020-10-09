@@ -18,7 +18,7 @@ class App extends React.Component {
     //console.log('app render console')
     return (
       <div className="App">
-        <button className="startBttn" onClick={()=> window.location.href='http://localhost:3001/newgame'}><img src={start} width={'100px'} height={'38px'} margin={'auto'} /></button>
+        <button className="startBttn" onClick={()=> window.location.href='http://localhost:3001/newgame'}><img alt='start button' src={start} width={'100px'} height={'38px'} /></button>
         <NavContainer />
         <Switch>
         < Route path='/home' component={HomeContainer} />

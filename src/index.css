@@ -10,8 +10,8 @@
     font-family: pkm_font;
     src: url(./assets/pkm_font.ttf);
 }
-#title {
-    font-size: large;
+.title {
+    font-size: larger;
 }
 h4 {
     font-weight: bolder;
@@ -25,7 +25,7 @@ h4 {
     margin-right: 20px;
     right: 30px;
     font-style: normal;
-    font-size: 10px;
+    font-size: 12px;
     font-family: pkm_font;
     font-weight: bold;
     text-align: right;
