@@ -277,3 +277,20 @@ input[type=text] {
 #dices {
     margin-left: 20px;
 }
+.characters{
+    font-size: x-small;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.characters li{
+    font-size: small;
+}
+.characters .stats {
+    padding-top: 10px;
+    padding-left: 10px;
+    border: solid 4px black;
+    width: 160px;
+    height: 60px;
+    border-radius: 5px;
+    color: rgb(75, 75, 75);
+}

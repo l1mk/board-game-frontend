@@ -8,23 +8,27 @@ function Characters(props) {
     return (
         <div 
             style = {{
-                textAlign: 'right',
+                textAlign: 'left',
                 position: 'absolute',
-                right: '16px',
+                left: '16px',
                 top: '80px'
         }}>
             <h5>TURNS: {props.turns}</h5>
 
-            <h5>PLAYERS</h5>
+            <h4>PLAYERS</h4>
            { props.playerOrder.map((player, index) => 
-                               <div key = {index}>
-                               <h4>{props.capitalize(player.name)}:</h4>
-                               <li>{props.capitalize(player.character.pokemon)}</li>
-                               <span>ATK: {player.character.attack} - DEF: {player.character.defense}</span><br></br> 
-                               <span>SPD: {player.character.speed} - LCK: {player.character.luck} </span><br></br>
-                               <span>- BATTLEPOINTS: {player.character.battlepoints} </span><br></br>
-                               <span>- EXPERIENCE: {player.character.experience} </span><br></br>
-                               </div>)}
+                            <div key = {index}>
+                               <div  className='characters'>
+                                    <li>{props.capitalize(player.name)}:</li>
+                                    <h5>{props.capitalize(player.character.pokemon)}</h5>
+                                    <div className='stats'>
+                                    <span>ATK: {player.character.attack} - DEF: {player.character.defense}</span><br></br> 
+                                    <span>SPD: {player.character.speed} - LCK: {player.character.luck} </span><br></br>
+                                    <span>BATTLEPOINTS: {player.character.battlepoints} </span><br></br>
+                                    <span>EXPERIENCE: {player.character.experience} </span><br></br>
+                                    </div>
+                               </div>
+                            </div>)}
         </div>
     );
 }

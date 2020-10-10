@@ -16,7 +16,9 @@ class BoardContainer extends React.Component {
           width: '800px',
           backgroundColor: 'grey',
           border: '1px solid black',
-          margin: '20px auto'
+          marginTop: '300px',
+          marginLeft: 'auto',
+          marginRight: 'auto',
           }}>
           < Board />
           {this.props.playerOrder.map((player, index) =>  

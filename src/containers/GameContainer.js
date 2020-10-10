@@ -11,7 +11,7 @@ class Game extends React.Component {
   render(){
     //console.log('Game start container render console', this.props)
     return (
-      <div>
+      <div className="main">
          <BoardContainer playerOrder = {this.props.playerOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer}/>
          <UIContainer players = {this.props.players} playerOrder = {this.props.playerOrder} updatePlayersOrder={this.props.updatePlayersOrder} currentPlayer = {this.props.currentPlayer} updateCurrentPlayer ={ this.props.updateCurrentPlayer} updatePlayer={this.props.updatePlayer} addGame={this.props.addGame} turns= {this.props.turns} updateTurns = {this.props.updateTurns} fetchUpdatePlayer = {this.props.fetchUpdatePlayer}  />
       </div>
