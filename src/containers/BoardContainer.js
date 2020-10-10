@@ -10,23 +10,21 @@ class BoardContainer extends React.Component {
     //console.log('Board container render console', this.props)
     return (
       <div>
-          <div style= {{
-          position: 'relative',
-          height: '200px',
-          width: '800px',
-          backgroundColor: 'grey',
-          border: '1px solid black',
-          marginTop: '300px',
-          marginLeft: 'auto',
-          marginRight: 'auto',
-          }}>
-          < Board />
-          {this.props.playerOrder.map((player, index) =>  
-            <div key ={index}>
+            <div style= {{
+        position: 'relative',
+        height: '200px',
+        width: '840px',
+        marginTop: '300px',
+        marginLeft: '350px',
+        marginRight: 'auto',
+        }}>
+            < Board />
+            {this.props.playerOrder.map((player, index) =>  
+                <div key ={index}>
                 < Player position = {player.position} url = {player.url}/>
-            </div>
-            )}
-          < Player position = {[-40, 0]} url = {pokeball} />
+                </div>
+               )}
+            < Player position = {[-40, 0]} url = {pokeball} />
           </div>
       </div>
     );

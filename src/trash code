@@ -119,3 +119,24 @@ export const fetchUpdatePlayer = (player) =>{
         .then(player => dispatch({type: 'UPDATE_PLAYER', payload: player}))
     }
 }
+-----
+
+    <div 
+        style ={{
+            position: 'absolute',
+        }} 
+    >
+        {tiles.map((row, y) => (
+            <div key = {y} style = {{display: 'flex' }}>
+                {row.map((tile, x ) => (
+                    <div key = {x}
+                        style ={{
+                            border: '1px solid white',
+                            height: 38,
+                            width: 38
+                        }}
+                    />
+                ))}
+            </div>
+        ))}
+    </div>

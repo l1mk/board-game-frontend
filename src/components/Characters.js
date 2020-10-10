@@ -6,15 +6,15 @@ function Characters(props) {
     //console.log('characters UI component', props);
 
     return (
-        <div 
+        <div>
+            <div className="UI"><span id="turn">TURNS: {props.turns}</span></div>
+            <div 
             style = {{
                 textAlign: 'left',
                 position: 'absolute',
                 left: '16px',
                 top: '80px'
-        }}>
-            <h5>TURNS: {props.turns}</h5>
-
+            }}>
             <h4>PLAYERS</h4>
            { props.playerOrder.map((player, index) => 
                             <div key = {index}>
@@ -29,6 +29,7 @@ function Characters(props) {
                                     </div>
                                </div>
                             </div>)}
+            </div>
         </div>
     );
 }

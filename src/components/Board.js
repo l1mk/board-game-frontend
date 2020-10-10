@@ -1,4 +1,5 @@
 import React from 'react';
+import map from '../images/map.png';
 
 //Board rendering and game start
 function Board() {
@@ -18,25 +19,12 @@ function Board() {
     //console.dir(tiles)
 
   return (
-    <div 
-        style ={{
-            position: 'absolute',
-        }} 
-    >
-        {tiles.map((row, y) => (
-            <div key = {y} style = {{display: 'flex' }}>
-                {row.map((tile, x ) => (
-                    <div key = {x}
-                        style ={{
-                            border: '1px solid white',
-                            height: 38,
-                            width: 38
-                        }}
-                    />
-                ))}
-            </div>
-        ))}
-    </div>
+    <div style= {{
+        position: 'relative',
+        height: '205px',
+        width: '820px',
+        backgroundImage: `url(${map})`,
+        }}/>
   );
 }
 

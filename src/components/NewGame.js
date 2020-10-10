@@ -48,6 +48,8 @@ class NewGame extends React.Component {
     //console.log('new game player selection render console')
     return (
       <div>
+          <div className="pokemonSelection">
+          </div>
           <form onSubmit={this.submitHandler}>
              <h3>Select Players:</h3>
             <label>- Player 1:</label> 

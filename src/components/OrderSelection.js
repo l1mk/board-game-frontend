@@ -65,7 +65,9 @@ class OrderSelection extends React.Component {
                     <li><span>PLAYER</span> 3...( {this.state.rolls[2]} )<br></br></li> 
                     <li><span>PLAYER</span> 4...( {this.state.rolls[3]} )<br></br></li> 
                 </div>
-            <div><button id="rollDices" onClick= {()=>this.rollDices()} ><span></span></button><span id="dices" className="instructions">  . . . . Roll Dices</span><br></br></div>
+            <div>
+                <div id="mapLayout">Almost ready</div>
+                <button id="rollDices" onClick= {()=>this.rollDices()} ><span></span></button><span id="dices" className="instructions">  . . . . Roll Dices</span><br></br></div>
                {this.gameStart()}
             </div>
         )

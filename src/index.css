@@ -1,6 +1,6 @@
 #homescreen {
-    width: 600px;
-    height: 338px;
+    width: 1200px;
+    height: 676;
     margin-left: 10px;
     display: block;
     margin-left: auto;
@@ -92,6 +92,7 @@ a:link {
     padding-right: 2px;
     border-radius: 10px;
     margin-left: 20px;
+    margin-top: 40px;
 }
 
 .App .startBttn:hover {
@@ -151,7 +152,7 @@ a:link {
 
 #player1 {
     position: absolute;
-    top: 135px;
+    top: 175px;
     left: 30px;
     background-image: url('./images/pikachu.png');
     background-size: cover;
@@ -163,7 +164,7 @@ a:link {
 }
 #player2 {
     position: absolute;
-    top: 190px;
+    top: 230px;
     left: 30px;
     background-image: url('./images/eevee.png');
     background-size: cover;
@@ -175,7 +176,7 @@ a:link {
 }
 #player3 { 
     position: absolute;
-    top: 245px;
+    top: 285px;
     left: 30px;
     background-image: url('./images/jigglypuff.png');
     background-size: cover;
@@ -187,7 +188,7 @@ a:link {
 }
 #player4 {
     position: absolute;
-    top: 300px;
+    top: 340px;
     left: 30px;
     background-image: url('./images/togepi.png');
     background-size: cover;
@@ -274,6 +275,21 @@ input[type=text] {
     color: lightgray;
     font-size: x-small;
 }
+#mapLayout{
+    align-items: right;
+    text-align: right;
+    position: absolute;
+    right: 200px;
+    top: 180px;
+    color: lightgrey;
+    font-size: small;
+    background-image: url('./images/instructions.png');
+    width: 400px;
+    height: 300px;
+    background-repeat: no-repeat;
+    background-size: contain;
+
+}
 #dices {
     margin-left: 20px;
 }
@@ -293,4 +309,42 @@ input[type=text] {
     height: 60px;
     border-radius: 5px;
     color: rgb(75, 75, 75);
+}
+.UI {
+    position: absolute;
+    right: 40px;
+    align-items: right;
+    text-align: right;
+}
+.UI span{
+    color: black;
+}
+#current {
+    position: absolute;
+    right: 10px;
+    bottom: 250px;
+}
+#turn {
+    position: absolute;
+    right: 10px;
+    bottom: 350px;
+}
+.playBttn {
+    margin-top: 25px;
+}
+.pokemonSelection{
+    position: absolute;
+    top: 115px;
+    right: 400px;
+    text-align: right;
+    background-image: url('./images/pkm_selection.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 600px;
+    height: 400px;
+}
+#titleSelection{
+    position: relative;
+    margin-top: 10px;
+    margin-right: 50px;
 }

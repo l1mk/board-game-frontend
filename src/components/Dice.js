@@ -16,17 +16,17 @@ class Dice extends React.Component {
 
     startButton = () => {
       if (this.state.gameOver === false){
-        return(
-          <button onClick={this.rollDice}>PLAY</button>
-        )
+        return(<div className="playBttn">
+          <button className="submitBttn" onClick={this.rollDice}>PLAY</button>
+          </div>)
       }
     }
 
     resetButton = () => {
       if (this.state.gameOver === true){
-        return(
-          <button onClick={this.reset}>RESET</button>
-        )
+        return(<div className="playBttn">
+          <button className="submitBttn" onClick={this.reset}>RESET</button>
+          </div>)
       }
     }
 
@@ -204,14 +204,16 @@ class Dice extends React.Component {
         //console.log('dice component', this.state, 'with props', this.props, 'real players', this.props.players );
         return (
             <div>
-              <h4>Current Turn is for: {this.props.capitalize(this.props.currentPlayer.name)}</h4>
+              <div className="UI">
+                <div id="current"><h4>Current Turn is for: <span>{this.props.capitalize(this.props.currentPlayer.name)}</span></h4></div>
                 {this.startButton()}
                 {this.resetButton()}
+                </div>
                 <div
                     style = {{
                         position: 'absolute',
-                        right: '16px',
-                        bottom: '80px',
+                        right: '40px',
+                        bottom: '200px',
                         backgroundImage: `url(${this.state.url})`,
                         width: '60px',
                         height: '60px',

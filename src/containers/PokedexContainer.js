@@ -21,7 +21,7 @@ class PokedexContainer extends React.Component {
   render(){
     //console.log('Pokedex container render console', this.props.characters)
     return (
-      <div className="main">
+      <div className="main" id="pokedex">
         <Pokedex characters = {this.props.characters} capitalize={this.capitalize}/>
       </div>
     );
