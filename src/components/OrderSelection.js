@@ -13,8 +13,9 @@ class OrderSelection extends React.Component {
     gameStart = () => {
         if (this.state.ready === true){
             return (
-                <NavLink to="/game"> Start Game!</NavLink>
-            )
+                <div className="link" >
+                <li><NavLink to="/game">START GAME</NavLink></li>
+                </div>)
         }
     }
     
@@ -55,14 +56,16 @@ class OrderSelection extends React.Component {
     render(){
         //console.log('order selection component', this.props, this.state, pikachu)
         return (
-            <div>
-                <button onClick= {()=>this.rollDices()} >Roll Dices</button><br></br>
-                <div>
-                    <li>Player1: {this.state.rolls[0]}<br></br></li> 
-                    <li>Player2: {this.state.rolls[1]}<br></br></li> 
-                    <li>Player3: {this.state.rolls[2]}<br></br></li> 
-                    <li>Player4: {this.state.rolls[3]}<br></br></li> 
-               </div>
+            <div className="orderSelection">
+           
+                <div className="list">
+                <h4>PLAYER ORDER SELECTION</h4>
+                    <li><span>PLAYER</span> 1...( {this.state.rolls[0]} )<br></br></li> 
+                    <li><span>PLAYER</span> 2...( {this.state.rolls[1]} )<br></br></li> 
+                    <li><span>PLAYER</span> 3...( {this.state.rolls[2]} )<br></br></li> 
+                    <li><span>PLAYER</span> 4...( {this.state.rolls[3]} )<br></br></li> 
+                </div>
+            <div><button id="rollDices" onClick= {()=>this.rollDices()} ><span></span></button><span id="dices" className="instructions">  . . . . Roll Dices</span><br></br></div>
                {this.gameStart()}
             </div>
         )

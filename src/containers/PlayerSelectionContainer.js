@@ -10,7 +10,7 @@ class PlayerSelectionContainer extends React.Component {
   render(){
     //console.log('Selection container render console', this.props)
     return (
-      <div>
+      <div className="main">
           <PlayerSelection selectedPlayers = {this.props.selectedPlayers} fetchAddPlayer={this.props.fetchAddPlayer} updateselectedPlayers={this.props.updateselectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPlayer={this.props.currentPlayer} turns={this.props.turns} characters = {this.props.characters} fetchAllCharacters={this.props.fetchAllCharacters} updateCurrentPlayer={this.props.updateCurrentPlayer}/>
       </div>
     );
@@ -26,7 +26,7 @@ const mapStateToProps = (store) => {
       characters: store.charactersReducer.characters,
     }
   }
-  
+
   const mapDispatchToProps = dispatch => {
     return {
     fetchAddPlayer: (player) => dispatch(fetchAddPlayer(player)),

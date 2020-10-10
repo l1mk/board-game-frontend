@@ -35,6 +35,8 @@ h4 {
     list-style-image: none;
 }
 .nav li {
+    margin-top: 2px;
+    margin-bottom: 2px;
     list-style-type: none;
 }
 .nav li:hover {
@@ -63,6 +65,7 @@ a:link {
   }
   a:hover {
     color: lightgray;
+    border: solid 3px white;
   }
   a:active {
     color: darkgray;
@@ -110,7 +113,6 @@ a:link {
     border: lightgrey;
     width: 80px;
     height: 28px;
-    margin-top: 30px;
     padding-left: 1px;
     padding-right: 2px;
     border-radius: 10px;
@@ -129,6 +131,88 @@ a:link {
     font-size: small;
     margin-top: 50px;
 }
+.list {
+    font-size: large;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+}
+.list li{
+    margin-bottom: 10px;
+    margin-top: 10px;
+    list-style-type: none;
+    list-style-image: url('./images/selector.png');
+    list-style-position: inside;
+    font-size: medium;
+}
+.list li span {
+    padding-left: 10px;
+}
+
+#player1 {
+    position: absolute;
+    top: 135px;
+    left: 30px;
+    background-image: url('./images/pikachu.png');
+    background-size: cover;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+
+}
+#player2 {
+    position: absolute;
+    top: 190px;
+    left: 30px;
+    background-image: url('./images/eevee.png');
+    background-size: cover;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+
+}
+#player3 { 
+    position: absolute;
+    top: 245px;
+    left: 30px;
+    background-image: url('./images/jigglypuff.png');
+    background-size: cover;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+
+}
+#player4 {
+    position: absolute;
+    top: 300px;
+    left: 30px;
+    background-image: url('./images/togepi.png');
+    background-size: cover;
+    border: solid 1px lightgrey;
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+
+}
+.label {
+    font-size: larger;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.form {
+    font-family: pkm_font;
+    font-size: medium;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+input[type=text] {
+    font-family: pkm_font;
+    border: none;
+    border-bottom: 2px solid darkgray;
+  }
 .dropdown{
     width: 500px;
     margin-top: 10px;
@@ -156,4 +240,40 @@ a:link {
 .dropdown select:focus{
     outline: none !important;
     color: lightgray;
+}
+.orderSelection button {
+    margin-left: 40px;
+    margin-top: 20px;
+    background-image: url('./images/dice.png');
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    height: 50px;
+    width: 50px;
+    border: none;
+    background-color: white;
+}
+.orderSelection button:hover {
+    border: solid 2px lightgray;
+    border-radius: 10px;
+    height: 52px;
+    width: 52px;
+    background-color: darkgray;
+}
+.orderSelection button:focus {
+    outline: none !important;
+    border: solid 2px grey;
+    border-radius: 10px;
+    background-color: lightgray;
+}
+.orderSelection button span {
+    display: none;
+  }
+.instructions{
+    margin-top: 40px;
+    margin-bottom: 40px;
+    color: lightgray;
+    font-size: x-small;
+}
+#dices {
+    margin-left: 20px;
 }
