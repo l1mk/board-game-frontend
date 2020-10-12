@@ -12,7 +12,7 @@ class OrderSelectionContainer extends React.Component {
   render(){
     //console.log('order selection container render console', this.props)
     return (
-      <div>
+      <div className="minicontainer">
         <OrderSelection  selectedPlayers = {this.props.selectedPlayers} updatePlayersOrder={this.props.updatePlayersOrder} playerOrder={this.props.playerOrder} currentPlayer={this.props.currentPlayer} turns={this.props.turns} characters = {this.props.characters} updateCurrentPlayer={this.props.updateCurrentPlayer}/>
       </div>
     );

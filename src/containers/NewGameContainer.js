@@ -8,7 +8,7 @@ class NewGameContainer extends React.Component {
   render(){
     //console.log('new game container render console', this.props)
     return (
-      <div className="main">
+      <div className="main container">
         <NewGame selectPlayers = {this.props.selectPlayers} />
       </div>
     );

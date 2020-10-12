@@ -8,7 +8,7 @@ class HomeContainer extends React.Component {
   render(){
       console.log("home screen")
     return (
-      <div>
+      <div >
         <img id="homescreen" src={homescreen} alt="homescreen" />
       </div>
     );

@@ -14,16 +14,18 @@
     font-size: larger;
 }
 h4 {
+    font-size: larger;
     font-weight: bolder;
     color: grey;
 }
 .main {
     font-family: pkm_font;
-    margin-left: 20px;
+    margin-left: 40px;
 }
 .nav {
     position: absolute;
     margin-right: 20px;
+    top: 30px;
     right: 30px;
     font-style: normal;
     font-size: 12px;
@@ -44,7 +46,7 @@ h4 {
 }
 .link {
     position: absolute;
-    margin-right: 20px;
+    margin-right: 60px;
     right: 30px;
     font-size: 16px;
     font-family: pkm_font;
@@ -92,7 +94,7 @@ a:link {
     padding-right: 2px;
     border-radius: 10px;
     margin-left: 20px;
-    margin-top: 40px;
+    margin-top: 20px;
 }
 
 .App .startBttn:hover {
@@ -129,14 +131,17 @@ a:link {
     background-color: darkgray;
 }
 .text {
-    font-size: small;
+    font-size: medium;
     margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
 }
 .list {
     font-size: large;
     margin-top: 40px;
     margin-bottom: 10px;
-    margin-left: 50px;
+    margin-left: 70px;
 }
 .list li{
     margin-bottom: 10px;
@@ -152,8 +157,8 @@ a:link {
 
 #player1 {
     position: absolute;
-    top: 175px;
-    left: 30px;
+    top: 270;
+    left: 90px;
     background-image: url('./images/pikachu.png');
     background-size: cover;
     border: solid 1px lightgrey;
@@ -164,8 +169,8 @@ a:link {
 }
 #player2 {
     position: absolute;
-    top: 230px;
-    left: 30px;
+    top: 320px;
+    left: 90px;
     background-image: url('./images/eevee.png');
     background-size: cover;
     border: solid 1px lightgrey;
@@ -176,8 +181,8 @@ a:link {
 }
 #player3 { 
     position: absolute;
-    top: 285px;
-    left: 30px;
+    top: 380px;
+    left: 90px;
     background-image: url('./images/jigglypuff.png');
     background-size: cover;
     border: solid 1px lightgrey;
@@ -188,8 +193,8 @@ a:link {
 }
 #player4 {
     position: absolute;
-    top: 340px;
-    left: 30px;
+    top: 430px;
+    left: 90px;
     background-image: url('./images/togepi.png');
     background-size: cover;
     border: solid 1px lightgrey;
@@ -256,14 +261,13 @@ input[type=text] {
 .orderSelection button:hover {
     border: solid 2px lightgray;
     border-radius: 10px;
-    height: 52px;
-    width: 52px;
+
     background-color: darkgray;
 }
 .orderSelection button:focus {
     outline: none !important;
     border: solid 2px grey;
-    border-radius: 10px;
+    border-radius: 4px;
     background-color: lightgray;
 }
 .orderSelection button span {
@@ -280,7 +284,7 @@ input[type=text] {
     text-align: right;
     position: absolute;
     right: 200px;
-    top: 180px;
+    top: 250px;
     color: lightgrey;
     font-size: small;
     background-image: url('./images/instructions.png');
@@ -291,7 +295,10 @@ input[type=text] {
 
 }
 #dices {
-    margin-left: 20px;
+    margin-left: 60px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
 }
 .characters{
     font-size: x-small;
@@ -334,7 +341,7 @@ input[type=text] {
 }
 .pokemonSelection{
     position: absolute;
-    top: 115px;
+    top: 220px;
     right: 400px;
     text-align: right;
     background-image: url('./images/pkm_selection.png');
@@ -347,4 +354,31 @@ input[type=text] {
     position: relative;
     margin-top: 10px;
     margin-right: 50px;
+}
+
+.container {
+    margin-top: 40px;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid 6px darkgray;
+    border-radius: 10px;
+}
+.minicontainer {
+    margin-top: 50px;
+    margin-left: 50px;
+    margin-right: 50px;
+    margin-bottom: 50px;
+    border: solid 4px black;
+    border-radius: 10px;
+}
+#start {
+    margin-right: 120px;
+    margin-top: 20px
+}
+.mapcontainer {
+    height: 205px;;
+    width: 820px;
+    background-color: black;
+    border: solid 18px rgb(56, 56, 56);
+    border-radius: 10px;
 }

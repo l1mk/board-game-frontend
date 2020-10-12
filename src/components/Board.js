@@ -19,12 +19,15 @@ function Board() {
     //console.dir(tiles)
 
   return (
-    <div style= {{
+    <div className = "mapcontainer">    
+        <div style= {{
         position: 'relative',
         height: '205px',
         width: '820px',
         backgroundImage: `url(${map})`,
         }}/>
+    </div>
+
   );
 }
 

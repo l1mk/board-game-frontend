@@ -6,7 +6,8 @@ function Games(props) {
     //console.log('games component', props);
 
     return (
-        <div>
+        <div className=" minicontainer">
+            <div className="text ">
             <h4>Games Played:</h4>
             {props.games.map(game => <div key={game.id}>
                 <span className = "title" >SESSION: {game.id} / TURNS: {game.turns} </span><br></br>
@@ -14,6 +15,7 @@ function Games(props) {
                 <button className="button" onClick={() => props.fetchDeleteGame(game.id)}>ERASE</button>
                 </div>
             )}
+            </div>
         </div>
     );
 }

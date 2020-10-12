@@ -11,6 +11,8 @@ class Player extends React.Component {
          style = {{
              position: 'absolute',
              objectFit: 'fit',
+             marginTop: '15px',
+             marginLeft: '12px',
              top: this.props.position[1],
              left: this.props.position[0],
              backgroundImage: `url(${this.props.url})`,

@@ -132,8 +132,8 @@ class PlayerSelection extends React.Component {
     render(){
         //console.log('selection component', this.props)
         return (
-            <div>
-                <div className="list">
+            <div className="minicontainer">
+                <div className="list text">
                 <h4>PLAYER COMPOSITION</h4>
                     {this.Player1()}
                     {this.Player2()}

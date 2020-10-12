@@ -34,7 +34,7 @@ function Pokedex(props) {
     }
 
     return (
-        <div>
+        <div className="text">
             <h4>Character List </h4>
             {props.characters.map(character => 
                 <div key={character.id} style={{display:'flex', marginBottom: '10px'}}>

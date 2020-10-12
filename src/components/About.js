@@ -6,7 +6,7 @@ function About() {
   //console.log('about render console');
 
   return (
-    <div>
+    <div className="text">
       <h4>About :</h4>
       <p>Welcome to my React Redux Project, im working on a Pokemon Board game, using as inspiration games that I used to build as a kid with similar set of rules as a regular RPG game but include on a board game.<br></br>
         I'll be posting updates, bugfixes and other stuff in this part.</p><br></br>

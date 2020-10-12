@@ -25,7 +25,7 @@ class RecordsContainer extends React.Component {
   render(){
     //console.log('records container render console', this.props)
     return (
-      <div className="main text" id="records">
+      <div className="main container" id="records">
         <PlayersContainer players = {this.props.players} fetchDeletePlayer = {this.props.fetchDeletePlayer} capitalize = {this.capitalize} />
         <GamesContainer games = {this.props.games} fetchDeleteGame = {this.props.fetchDeleteGame} capitalize = {this.capitalize} />
       </div>
