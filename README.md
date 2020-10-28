@@ -1,3 +1,28 @@
+## board-game-frontend
+React Redux project using HTML CSS for frontend and Rails API for backend.
+
+## Setup:
+
+Clone this repository and paste in your terminal.
+Clone the backend repository called board-game-backend as well.
+Go inside the folder you just cloned using $cd board-game-backend
+While on it, start the migration with $rake db:migrate.
+Feed the database with some basic examples using $rake db:seed. If you want you can test the API using the rails console command, $rails c. While on it, try creating new models for each like Game.create(title: "your title")
+After testing the models you can fire up the Server using $rails S
+You can visit http://localhost:3000/games on your browser to confirm the server is live. Keep it live.
+Go inside the other repository you copied, $cd board-game-frontend and fire the app using $npm start
+
+
+## Usage:
+The app consist on a board game for four players to compete on who arrives first to the end of the board using a dice to move around. The game is a start prototype to a more complicated game that will be improve with more functionalities and mechanics. In the meantime is just a race that is randomly finish by players taking turns using the dice.
+The app has different pages to go throught to read more info about the state of the game, to see all records of all games that have been played and all players that has been created. Also you can learn a bit more on the pokemon characters available to be used in the game.
+
+## Suppport: 
+Feel free to reach out, if you see a bug or if you believe there is something to be improved.
+
+## License: The pokemon artwork was taken from different sources online. Nintendo and the Pokemon company own the right of everything Pokemon related. I used free images and edited some of them using illustrator.
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
