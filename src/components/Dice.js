@@ -167,25 +167,29 @@ class Dice extends React.Component {
     rollDice = () => {
       
       let dice =  1 + Math.floor(Math.random() * 6)
-      if (dice === 1){
-          //console.log(dice)
-          this.setState({url: dice1, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
-      } else if (dice === 2){
-        //console.log(dice)
-        this.setState({url: dice2, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
-      } else if (dice === 3){
-        //console.log(dice)
-        this.setState({url: dice3, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
-      } else if (dice === 4){
-        //console.log(dice)
-        this.setState({url: dice4, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
-      } else if (dice === 5){
-        //console.log(dice)
-        this.setState({url: dice5, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
-      } else if (dice === 6){
-        //console.log(dice)
-        this.setState({url: dice6, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+      switch (dice){
+          case 1:
+            this.setState({url: dice1, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+          break;
+          case 2:
+            this.setState({url: dice2, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+          break;
+          case 3:
+            this.setState({url: dice3, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+          break;
+          case 4:
+            this.setState({url: dice4, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+          break;
+          case 5:
+            this.setState({url: dice5, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+          break;
+          case 6:
+            this.setState({url: dice6, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
+          break;
+          default:
+            this.setState({url: dice1, counter: this.state.counter, turns: this.state.turns, gameOver: this.state.gameOver})
       }
+ 
       let counter = this.state.counter
       let turns = this.state.turns
       if (counter < 3){
