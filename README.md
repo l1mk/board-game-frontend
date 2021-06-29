@@ -11,7 +11,7 @@ Feed the database with some basic examples using $rake db:seed. If you want you 
 
 $Game.create(turns: 1, player1: "red", pokemon1: "charmander", player2: "blue", pokemon2: "squirtle", player3: "yellow", pokemon3: "onix", player4: "pink", pokemon4: "staryu" )
 
-After testing the models you can fire up the Server using $rails S
+After testing the models you can fire up the Server using $rails server
 You can visit http://localhost:3000/games on your browser to confirm the server is live. Keep it live.
 Go inside the other repository you copied, $cd board-game-frontend and fire the app using $npm start
 
