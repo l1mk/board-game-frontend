@@ -15,6 +15,8 @@ After testing the models you can fire up the Server using $rails server
 You can visit http://localhost:3000/games on your browser to confirm the server is live. Keep it live.
 Go inside the other repository you copied, $cd board-game-frontend and fire the app using $npm start
 
+If you encounter an issue running the server, make sure that you are inside the /board-game-frontend folder and fire $npm install and $npm audit fix --force to make sure all dependencies are installed.
+
 
 ## Usage:
 The app consist on a board game for four players to compete on who arrives first to the end of the board using a dice to move around. The game is a start prototype to a more complicated game that will be improve with more functionalities and mechanics. In the meantime is just a race that is randomly finish by players taking turns using the dice.
