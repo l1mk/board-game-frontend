@@ -7,7 +7,10 @@ Clone this repository and paste in your terminal.
 Clone the backend repository called board-game-backend as well.
 Go inside the folder you just cloned using $cd board-game-backend
 While on it, start the migration with $rake db:migrate.
-Feed the database with some basic examples using $rake db:seed. If you want you can test the API using the rails console command, $rails c. While on it, try creating new models for each like Game.create(title: "your title")
+Feed the database with some basic examples using $rake db:seed. If you want you can test the API using the rails console command, $rails c. While on it, try creating new models for example:
+
+$Game.create(turns: 1, player1: "red", pokemon1: "charmander", player2: "blue", pokemon2: "squirtle", player3: "yellow", pokemon3: "onix", player4: "pink", pokemon4: "staryu" )
+
 After testing the models you can fire up the Server using $rails S
 You can visit http://localhost:3000/games on your browser to confirm the server is live. Keep it live.
 Go inside the other repository you copied, $cd board-game-frontend and fire the app using $npm start
